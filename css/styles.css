@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Oswald:wght@300;400;500;600;700&display=swap');
 
 /* ==========================================================================
    SISTEMA DE DISEÑO & VARIABLES
@@ -23,8 +23,8 @@
     --text-muted-dark: #475569;
     
     /* Fuentes */
-    --font-heading: 'Outfit', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
     
     /* Bordes y Sombras */
     --radius-sm: 6px;
