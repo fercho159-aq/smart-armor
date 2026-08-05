@@ -1,0 +1,24 @@
+# API Keys & Sensitive Info
+.env
+.env.*
+*.key
+*.pem
+credentials.*
+config.json
+secret*
+private*
+
+# IDEs & System files
+.idea/
+.vscode/
+*.suo
+*.user
+Thumbs.db
+.DS_Store
+
+# Temporary / OS files
+scratch/
+tmp/
+temp/
+*.log
+*.pdf

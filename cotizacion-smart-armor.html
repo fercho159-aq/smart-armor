@@ -1,0 +1,287 @@
+<title>Cotización Landing Page — Smart Armor</title>
+<style>
+  @page { size: letter; margin: 14mm 18mm; }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --ink: #111114;
+    --ink-2: #52525A;
+    --ink-3: #72727E;
+    --rule: #D1D1D8;
+    --bg: #FFFFFF;
+    --bg-alt: #F3F3F6;
+    --font: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #E4E4EA; --ink-2: #A0A0AA; --ink-3: #7A7A86;
+      --rule: #36363E; --bg: #141417; --bg-alt: #1E1E22;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #E4E4EA; --ink-2: #A0A0AA; --ink-3: #7A7A86;
+    --rule: #36363E; --bg: #141417; --bg-alt: #1E1E22;
+  }
+  :root[data-theme="light"] {
+    --ink: #111114; --ink-2: #52525A; --ink-3: #72727E;
+    --rule: #D1D1D8; --bg: #FFFFFF; --bg-alt: #F3F3F6;
+  }
+
+  body {
+    font-family: var(--font);
+    color: var(--ink);
+    background: var(--bg-alt);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .page {
+    max-width: 660px;
+    margin: 36px auto;
+    padding: 44px 48px 36px;
+    background: var(--bg);
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.04);
+  }
+
+  @media print {
+    body { background: white; }
+    .page { max-width: none; margin: 0; padding: 0; box-shadow: none; border-radius: 0; }
+    .accent-bar { display: none; }
+  }
+
+  /* Accent bar */
+  .accent-bar {
+    height: 3px;
+    background: var(--ink);
+    border-radius: 1px;
+    margin-bottom: 32px;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+  }
+  .brand {
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+  .brand-sub {
+    display: block;
+    font-weight: 400;
+    color: var(--ink-3);
+    font-size: 9.5px;
+    letter-spacing: 0.22em;
+    margin-top: 3px;
+  }
+  .doc-meta {
+    text-align: right;
+    font-size: 11.5px;
+    color: var(--ink-3);
+    line-height: 1.65;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* Section label */
+  .section-label {
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 14px;
+  }
+
+  /* Client info */
+  .client-block {
+    display: grid;
+    grid-template-columns: 76px 1fr;
+    gap: 6px 16px;
+    margin: 22px 0;
+    font-size: 13.5px;
+  }
+  .client-block dt {
+    font-weight: 600;
+    font-size: 9.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    padding-top: 3px;
+  }
+  .client-block dd { font-weight: 500; }
+
+  /* Description */
+  .description {
+    margin: 20px 0;
+    font-size: 12.8px;
+    color: var(--ink-2);
+    line-height: 1.7;
+    max-width: 520px;
+  }
+
+  /* Deliverables */
+  .deliverables {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0 0;
+  }
+  .deliverables tr { border-bottom: 1px solid var(--rule); }
+  .deliverables tr:last-child { border-bottom: none; }
+  .deliverables td {
+    padding: 11px 0;
+    font-size: 12.5px;
+    vertical-align: top;
+    line-height: 1.55;
+  }
+  .deliverables .del-name {
+    width: 128px;
+    font-weight: 600;
+    font-size: 12px;
+    padding-right: 20px;
+    white-space: nowrap;
+  }
+  .deliverables .del-detail {
+    color: var(--ink-2);
+    font-size: 12px;
+  }
+
+  /* Investment */
+  .investment {
+    text-align: center;
+    padding: 24px 0 18px;
+  }
+  .price {
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .price-currency {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--ink-2);
+    margin-left: 2px;
+  }
+  .price-type {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-top: 6px;
+  }
+
+  /* Terms */
+  .terms {
+    font-size: 11.5px;
+    color: var(--ink-3);
+    text-align: center;
+    line-height: 1.8;
+    margin-bottom: 22px;
+  }
+  .terms .sep {
+    margin: 0 6px;
+    opacity: 0.35;
+  }
+
+  /* Footer */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10.5px;
+    color: var(--ink-3);
+    padding-top: 16px;
+  }
+
+  /* Spacing helpers */
+  .mt-s { margin-top: 20px; }
+  .mb-s { margin-bottom: 20px; }
+</style>
+
+<div class="page">
+  <div class="accent-bar"></div>
+
+  <div class="header">
+    <div class="brand">
+      MAW<br>Soluciones
+      <span class="brand-sub">Desarrollo &amp; Marketing Digital</span>
+    </div>
+    <div class="doc-meta">
+      5 de agosto de 2026<br>
+      Ref. COT-SA-001
+    </div>
+  </div>
+
+  <hr>
+
+  <dl class="client-block">
+    <dt>Cliente</dt>
+    <dd>Smart Armor</dd>
+    <dt>Proyecto</dt>
+    <dd>Landing Page Profesional</dd>
+  </dl>
+
+  <p class="description">
+    Diseño y desarrollo de una landing page de alto impacto, optimizada para convertir visitantes
+    provenientes de campañas en Facebook y Google Ads. La estructura destaca los diferentes tipos
+    de blindaje disponibles con un diseño profesional orientado a generar solicitudes de cotización.
+  </p>
+
+  <hr>
+
+  <div class="mt-s">
+    <div class="section-label">Alcance y entregables</div>
+    <table class="deliverables">
+      <tr>
+        <td class="del-name">Diseño UX / UI</td>
+        <td class="del-detail">Arquitectura de información y diseño visual centrado en el usuario, con flujo optimizado para maximizar conversiones.</td>
+      </tr>
+      <tr>
+        <td class="del-name">Mapas de calor</td>
+        <td class="del-detail">Integración de heatmaps para medir clics, profundidad de scroll y zonas de mayor interacción en tiempo real.</td>
+      </tr>
+      <tr>
+        <td class="del-name">SEO técnico</td>
+        <td class="del-detail">Meta tags, Open Graph, Schema markup, sitemap XML, robots.txt y optimización de velocidad de carga.</td>
+      </tr>
+      <tr>
+        <td class="del-name">Analytics</td>
+        <td class="del-detail">Configuración completa de Google Analytics 4 y Google Search Console para rastreo de métricas y rendimiento orgánico.</td>
+      </tr>
+      <tr>
+        <td class="del-name">Soporte 12 meses</td>
+        <td class="del-detail">Modificaciones y ajustes directos en la página durante un año completo, sin costos adicionales.</td>
+      </tr>
+    </table>
+  </div>
+
+  <hr class="mt-s">
+
+  <div class="investment">
+    <div class="price">$3,500 <span class="price-currency">MXN</span></div>
+    <div class="price-type">Inversión total &mdash; pago único</div>
+  </div>
+
+  <div class="terms">
+    50% anticipo para iniciar <span class="sep">&middot;</span> 50% contra entrega<br>
+    Entrega estimada: 5–7 días hábiles <span class="sep">&middot;</span> Vigencia: 15 días naturales
+  </div>
+
+  <hr>
+
+  <div class="footer">
+    <span>contacto@mawsoluciones.com</span>
+    <span>mawsoluciones.com</span>
+  </div>
+</div>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Armor México | Blindaje Inteligente y Discreto en CDMX</title>
+    
+    <!-- Meta etiquetas SEO y Geo-Posicionamiento -->
+    <meta name="description" content="Protege a tu familia con el blindaje de camionetas más discreto y ligero en CDMX. Cristales balísticos de 14mm y Kevlar. Cotización 100% confidencial.">
+    <meta name="keywords" content="blindaje de camionetas cdmx, blindaje automotriz mexico, blindaje nivel 3 cdmx, cristales blindados cdmx, autos blindados entrega inmediata mexico">
+    <meta name="geo.region" content="MX-MEX">
+    <meta name="geo.placename" content="Ciudad de México">
+    <meta name="geo.position" content="19.4326;-99.1332">
+    <meta name="ICBM" content="19.4326, -99.1332">
+    
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- FontAwesome alternativa (iconografía SVG en línea para velocidad y SEO) -->
+</head>
+<body>
+
+    <!-- OVERLAY PARA MENÚ MÓVIL -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- HEADER / NAVEGACIÓN -->
+    <header>
+        <div class="container navbar">
+            <!-- LOGO SVG -->
+            <a href="index.html" class="logo-container" id="navLogo">
+                <img src="assets/images/logo-blanco.png" alt="Smart Armor de México" class="logo-img">
+            </a>
+
+            <!-- MENÚ DESKTOP CON MEGA MENÚ -->
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link active">Inicio</a></li>
+                <li class="nav-item has-mega-menu">
+                    <a href="servicios.html" class="nav-link">Servicios v</a>
+                    <!-- MEGA MENÚ -->
+                    <div class="mega-menu container">
+                        <div class="mega-col">
+                            <h3>Niveles de Blindaje</h3>
+                            <ul>
+                                <li><a href="servicios.html#nivel3">Nivel 3 - Protección Urbana (Armas Cortas)</a></li>
+                                <li><a href="servicios.html#nivel4">Nivel 4 - Asalto Organizado</a></li>
+                                <li><a href="servicios.html#nivel5">Nivel 5 - Táctico / Militar (Armas Largas)</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h3>Blindaje Especializado</h3>
+                            <ul>
+                                <li><a href="servicios.html#cristales">Blindaje de Cristales y Puertas</a></li>
+                                <li><a href="servicios.html#mantenimiento">Mantenimiento de Unidades</a></li>
+                                <li><a href="servicios.html#reemplazos">Reemplazo de Cristales Balísticos</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h3>Disponibilidad CDMX</h3>
+                            <ul>
+                                <li><a href="servicios.html#seminuevos">Vehículos Blindados Entrega Inmediata</a></li>
+                                <li><a href="servicios.html#leasing">Esquemas de Leasing Dedusibles</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <div class="mega-card">
+                                <h4>¿Listo para protegerte?</h4>
+                                <p>Cotiza de manera discreta y 100% confidencial en menos de 20 min.</p>
+                                <a href="contacto.html" class="btn btn-primary" style="padding: 10px 15px; font-size: 0.8rem;">Cotizar Ahora</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="casos-exito.html" class="nav-link">Casos de Éxito</a></li>
+                <li class="nav-item"><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                <li class="nav-item"><a href="preguntas-frecuentes.html" class="nav-link">FAQ</a></li>
+                <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+
+            <!-- ACCIÓN RÁPIDA -->
+            <div class="header-cta">
+                <a href="contacto.html" class="btn btn-outline-cyan" id="headerCtaBtn">Cotizar Confidencial</a>
+            </div>
+
+            <!-- MÓVIL: BOTÓN HAMBURGUESA -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú de navegación">☰</button>
+        </div>
+    </header>
+
+    <!-- MENÚ MÓVIL VERTICAL (DRAWER RESPONSIVE) -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="logo-container">
+                <img src="assets/images/logo-blanco.png" alt="Smart Armor de México" class="logo-img" style="height: 35px; width: auto;">
+            </a>
+            <button class="close-menu" id="closeMenu" aria-label="Cerrar menú">&times;</button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li>
+                <a href="servicios.html">Servicios</a>
+                <ul class="mobile-nav-submenu">
+                    <li><a href="servicios.html#nivel3">Nivel 3 - Protección Urbana</a></li>
+                    <li><a href="servicios.html#nivel4">Nivel 4 - Asalto Organizado</a></li>
+                    <li><a href="servicios.html#nivel5">Nivel 5 - Militar / Táctico</a></li>
+                    <li><a href="servicios.html#seminuevos">Vehículos Disponibles</a></li>
+                </ul>
+            </li>
+            <li><a href="casos-exito.html">Casos de Éxito</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="preguntas-frecuentes.html">FAQ</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <div class="mobile-nav-footer">
+            <a href="contacto.html" class="btn btn-primary">Cotizar Blindaje</a>
+            <a href="https://wa.me/525500000000?text=Hola,%20solicito%20información%20sobre%20el%20blindaje%20de%20un%20vehículo." target="_blank" class="btn btn-whatsapp">WhatsApp Asistencia</a>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        
+        <!-- HERO SECTION (PASTOR - Problema) -->
+        <section class="hero" id="inicio">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="badge badge-cyan">Seguridad Automotriz Certificada</span>
+                    <h1>Protege tu vehículo con blindaje inteligente y discreto en CDMX</h1>
+                    <p>En la Ciudad de México, el tráfico y las intersecciones críticas exponen diariamente a tu familia a riesgos inesperados. Smart Armor refuerza tu camioneta con cristales balísticos de 14mm y Kevlar de 9 capas, garantizando máxima protección sin alterar la estética original del vehículo ni delatar su nivel de seguridad.</p>
+                    <div class="hero-cta-group">
+                        <a href="contacto.html" class="btn btn-primary" id="heroQuoteBtn">Cotizar Blindaje</a>
+                        <a href="servicios.html" class="btn btn-secondary" id="heroLearnBtn">¿Cómo funciona?</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hud-scanner">
+                        <div class="hud-corner hud-corner-tl"></div>
+                        <div class="hud-corner hud-corner-tr"></div>
+                        <div class="hud-corner hud-corner-bl"></div>
+                        <div class="hud-corner hud-corner-br"></div>
+                        <img src="assets/images/hero_suv.jpg" alt="Camioneta de lujo blindada en CDMX por Smart Armor" width="600" height="338">
+                        <div class="scanning-info">
+                            <span class="scanning-dot"></span>
+                            Análisis de Blindaje Activo
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AGITACIÓN SECTION (PASTOR - Agitación) -->
+        <section class="agitation section-padding">
+            <div class="container agitation-grid">
+                <div class="agitation-image">
+                    <img src="assets/images/ballistic_glass.jpg" alt="Prueba de resistencia en cristales de camioneta Smart Armor" width="500" height="375" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-cyan);">
+                </div>
+                <div class="agitation-content">
+                    <span class="badge badge-danger">Riesgos en CDMX</span>
+                    <h2 class="text-white" style="font-size: 2.2rem; margin-bottom: 20px;">¿Qué tan seguro estás dentro de tu vehículo en el tráfico de CDMX?</h2>
+                    <p class="text-white" style="opacity: 0.85; margin-bottom: 15px;">No se trata del robo de una camioneta; el verdadero peligro reside en la violencia ejercida en semáforos, asaltos express en vías principales (Periférico, Constituyentes, Reforma) o intentos de secuestro de vehículos de lujo.</p>
+                    <div class="agitation-card">
+                        <h3 class="text-white">El costo de no prevenir</h3>
+                        <p class="text-white" style="opacity: 0.8;">Un impacto de bujía o golpe con mazo rompe un cristal estándar en menos de 1.5 segundos. Estar expuesto con tu familia a bordo causa un daño y trauma psicológico irreversible.</p>
+                        <ul class="danger-list">
+                            <li class="text-white">
+                                <span class="danger-icon">⚠️</span>
+                                <strong>Vulnerabilidad Física:</strong> El cristal lateral es el punto de acceso más rápido para la delincuencia.
+                            </li>
+                            <li class="text-white">
+                                <span class="danger-icon">⚠️</span>
+                                <strong>Pérdida de Tiempo Crítico:</strong> 2 segundos de resistencia pueden marcar la diferencia entre escapar o ser víctima.
+                            </li>
+                            <li class="text-white">
+                                <span class="danger-icon">⚠️</span>
+                                <strong>Riesgo de Familia Expuesta:</strong> Tus acompañantes dependen de la seguridad estructural de tu vehículo.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOLUCIÓN SECTION (PASTOR - Solución) -->
+        <section class="solution section-padding">
+            <div class="container solution-grid">
+                <div class="solution-content">
+                    <span class="badge badge-cyan">La Solución Smart Armor</span>
+                    <h2>Blindaje Discreto de Alta Ingeniería: Tu escudo invisible</h2>
+                    <p style="color: var(--text-muted-dark); margin-bottom: 20px;">Diseñamos un blindaje premium utilizando materiales aeroespaciales para blindar tu camioneta en la Ciudad de México sin que nadie lo note desde el exterior. Preservamos las prestaciones, la garantía oficial y el confort de conducción.</p>
+                    <p style="color: var(--text-muted-dark); margin-bottom: 20px;">Nuestra solución combina cristales balísticos certificados con inserciones de aramida (Kevlar) que absorben la energía del proyectil, deteniendo la agresión y permitiéndote realizar una maniobra evasiva segura.</p>
+                    
+                    <div class="tech-specs">
+                        <div class="spec-item">
+                            <h4 style="color: var(--text-dark);">Cristales de 14mm</h4>
+                            <p>Resistentes a impactos múltiples de calibres urbanos (9mm, .357 Magnun).</p>
+                        </div>
+                        <div class="spec-item">
+                            <h4 style="color: var(--text-dark);">Aramida Multicapa</h4>
+                            <p>Kevlar de 9 capas en puertas y carrocería que previene sobrepeso excesivo.</p>
+                        </div>
+                        <div class="spec-item">
+                            <h4 style="color: var(--text-dark);">Estética Original</h4>
+                            <p>Instalación discreta. Los cristales y las molduras mantienen su aspecto de fábrica.</p>
+                        </div>
+                        <div class="spec-item">
+                            <h4 style="color: var(--text-dark);">Certificación NIJ</h4>
+                            <p>Cumplimiento estricto de las normas internacionales de balística y la SSP.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="solution-visual">
+                    <img src="assets/images/workshop_armor.jpg" alt="Ingeniería y taller de blindaje automotriz en CDMX" width="500" height="375" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+                </div>
+            </div>
+        </section>
+
+        <!-- BENEFICIOS CLAVE -->
+        <section class="benefits section-padding" style="background-color: var(--bg-light-gray);">
+            <div class="container">
+                <div class="text-center" style="max-width: 700px; margin: 0 auto 50px auto;">
+                    <span class="badge badge-cyan">Beneficios</span>
+                    <h2 style="color: var(--text-dark);">¿Por qué elegir Smart Armor de México?</h2>
+                    <p style="color: var(--text-muted-dark);">Líderes en blindaje de alta calidad y discreción con base de operaciones física y planta en la Ciudad de México.</p>
+                </div>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <svg class="benefit-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <path d="m9 11 2 2 4-4"/>
+                        </svg>
+                        <h3>Blindaje Ligero Certificado</h3>
+                        <p>Cristales balísticos de 14 mm y Kevlar de 9 capas que no alteran el rendimiento de motor ni frenos.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <svg class="benefit-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 21h18"/>
+                            <path d="M19 21v-4a2 2 0 0 0-2-2h-3a2 2 0 0 0-2 2v4"/>
+                            <path d="M5 21V7a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v14"/>
+                            <path d="M9 9h2"/>
+                            <path d="M9 13h2"/>
+                            <path d="M9 17h2"/>
+                        </svg>
+                        <h3>Seguridad Urbana Avanzada</h3>
+                        <p>Protección óptima diseñada específicamente para las vialidades complejas de la Ciudad de México.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <svg class="benefit-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                        <h3>Discreción y Estilo</h3>
+                        <p>Sin cambios estéticos perceptibles al exterior, conservando la identidad del vehículo original.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <svg class="benefit-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                        </svg>
+                        <h3>Inversión y Deducibilidad</h3>
+                        <p>Opción de arrendamiento puro (leasing) deducible de impuestos y plusvalía garantizada de la unidad.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NIVELES DE BLINDAJE DESTACADOS -->
+        <section class="levels section-padding">
+            <div class="container">
+                <div class="text-center services-intro">
+                    <span class="badge badge-cyan">Nuestros Niveles</span>
+                    <h2>Niveles de Blindaje Automotriz adaptados a ti</h2>
+                    <p style="color: var(--text-muted-dark);">Entiende los estándares de protección balística más recomendados para circular en Ciudad de México.</p>
+                </div>
+                
+                <div class="levels-grid">
+                    <!-- Nivel 3 -->
+                    <div class="level-card">
+                        <div class="level-header">
+                            <span class="level-badge">El más vendido</span>
+                            <h3>Nivel 3</h3>
+                            <div class="level-caliber">Urbano / Antiasalto</div>
+                        </div>
+                        <div class="level-body">
+                            <p style="font-size: 0.9rem; color: var(--text-muted-dark); margin-bottom: 20px;">Ideal para circular en Ciudad de México frente a delincuencia común y asaltos en semáforos.</p>
+                            <ul class="level-features">
+                                <li><i>✓</i> Resiste calibres 9mm, .44 Magnum, .357 Magnum</li>
+                                <li><i>✓</i> Cristales blindados de 14mm a 17mm de grosor</li>
+                                <li><i>✓</i> Kevlar de 9 capas en puertas y paneles de carrocería</li>
+                                <li><i>✓</i> Peso adicional mínimo (aprox 120-150 kg)</li>
+                                <li><i>✓</i> Mantiene suspensión y frenado original</li>
+                            </ul>
+                        </div>
+                        <div class="level-footer">
+                            <a href="contacto.html?nivel=3" class="btn btn-primary" style="width:100%">Cotizar Nivel 3</a>
+                        </div>
+                    </div>
+                    <!-- Nivel 4 -->
+                    <div class="level-card">
+                        <div class="level-header">
+                            <h3>Nivel 4</h3>
+                            <div class="level-caliber">Crimen Organizado</div>
+                        </div>
+                        <div class="level-body">
+                            <p style="font-size: 0.9rem; color: var(--text-muted-dark); margin-bottom: 20px;">Recomendado para empresarios, directivos y personas de alto perfil con riesgo de secuestro en vialidades secundarias.</p>
+                            <ul class="level-features">
+                                <li><i>✓</i> Resiste proyectiles de fusil AK-47 (7.62x39mm)</li>
+                                <li><i>✓</i> Cristales de 21mm a 26mm de grosor</li>
+                                <li><i>✓</i> Acero balístico combinado con aramida</li>
+                                <li><i>✓</i> Modificaciones mecánicas de refuerzo incluidas</li>
+                                <li><i>✓</i> Runflats en neumáticos para escape en pinchadura</li>
+                            </ul>
+                        </div>
+                        <div class="level-footer">
+                            <a href="contacto.html?nivel=4" class="btn btn-primary" style="width:100%">Cotizar Nivel 4</a>
+                        </div>
+                    </div>
+                    <!-- Nivel 5 -->
+                    <div class="level-card">
+                        <div class="level-header">
+                            <h3>Nivel 5</h3>
+                            <div class="level-caliber">Seguridad Táctica / Alta Poder</div>
+                        </div>
+                        <div class="level-body">
+                            <p style="font-size: 0.9rem; color: var(--text-muted-dark); margin-bottom: 20px;">Máxima protección frente a atentados selectivos y armas largas de uso militar.</p>
+                            <ul class="level-features">
+                                <li><i>✓</i> Resiste fusiles AR-15 (5.56x45mm) y FAL (7.62x51mm NATO)</li>
+                                <li><i>✓</i> Cristales de 38mm a 42mm de grosor</li>
+                                <li><i>✓</i> Blindaje de acero balístico militar opaco al 100%</li>
+                                <li><i>✓</i> Refuerzo integral de suspensión, frenos y bisagras</li>
+                                <li><i>✓</i> Sistema de intercomunicador bidireccional y sirena</li>
+                            </ul>
+                        </div>
+                        <div class="level-footer">
+                            <a href="contacto.html?nivel=5" class="btn btn-primary" style="width:100%">Cotizar Nivel 5</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS SECTION (PASTOR - Testimonios y Storytelling) -->
+        <section class="testimonials bg-dark-section section-padding">
+            <div class="container">
+                <div class="text-center" style="max-width: 700px; margin: 0 auto 50px auto;">
+                    <span class="badge badge-cyan">Historias de Seguridad</span>
+                    <h2>Casos de Éxito y Storytelling</h2>
+                    <p style="color: var(--text-muted-light);">Relatos de cómo un vehículo blindado correctamente puede cambiar el desenlace ante una agresión armada en CDMX.</p>
+                </div>
+                
+                <div class="testimonial-container">
+                    <div class="testimonial-slider">
+                        <!-- Slide 1 -->
+                        <div class="testimonial-slide active">
+                            <div class="testimonial-card">
+                                <div class="quote-icon">“</div>
+                                <p class="testimonial-text">"Eran las 8:20 PM en Constituyentes, cerca del cruce con Observatorio. El tráfico de CDMX estaba detenido por completo. De la nada, dos sujetos se acercaron a mi camioneta familiar y uno de ellos sacó un arma, golpeando con fuerza el cristal del conductor para obligarme a abrir. Gracias al blindaje de cristales Smart Armor de 14mm, el vidrio resistió los impactos del golpe y la cacha de la pistola sin romperse. Esos 4 segundos de resistencia me permitieron subir a la banqueta lateral y acelerar para ponernos a salvo. Smart Armor salvó a mi familia de una tragedia."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4>Carolina M.</h4>
+                                        <p>Madre de Familia, Lomas de Chapultepec</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="quote-icon">“</div>
+                                <p class="testimonial-text">"En mi trayecto diario hacia la zona industrial del Estado de México cruzando por el norte de CDMX, intentaron cerrarme el paso con dos automóviles. Al no detenerme, dispararon contra el costado derecho de la camioneta. La placa de Kevlar de 9 capas en las puertas de Smart Armor absorbió la bala calibre 9mm por completo. La camioneta no tuvo sobrepeso notable al conducirla estos meses y funcionó exactamente como un escudo. La discreción fue clave: los delincuentes no sabían que estaba blindada hasta que no pudieron atravesarla."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4>Alejandro G.</h4>
+                                        <p>Empresario e Inversionista, Polanco</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Controles -->
+                    <div class="slider-controls">
+                        <button class="slider-btn" id="prevTestimonial" aria-label="Testimonio anterior">←</button>
+                        <button class="slider-btn" id="nextTestimonial" aria-label="Testimonio siguiente">→</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OFERTA & RESPUESTA SECTION (PASTOR - Oferta y Respuesta - Google Ads Ready) -->
+        <section class="offer-section section-padding" id="contacto">
+            <div class="container offer-grid">
+                <div class="offer-info">
+                    <span class="badge badge-cyan">Oferta Exclusiva Google Ads</span>
+                    <h2>Solicita hoy una Asesoría Confidencial sin compromiso</h2>
+                    <p style="color: var(--text-muted-light); margin-bottom: 25px;">No dejes la seguridad de tus seres queridos al azar en la Ciudad de México. Te ofrecemos un análisis de riesgo confidencial para determinar qué nivel de blindaje requiere tu vehículo según tus rutas, hábitos de conducción y presupuesto.</p>
+                    
+                    <ul class="offer-benefits-list">
+                        <li><i>✓</i> <strong>Cotización Express en 20 Minutos:</strong> Respuestas rápidas para campañas de Google Ads.</li>
+                        <li><i>✓</i> <strong>Esquemas de Arrendamiento:</strong> Financiamiento deducible de impuestos (leasing automotriz).</li>
+                        <li><i>✓</i> <strong>Garantía de Delaminación:</strong> 5 años de garantía en cristales balísticos sin burbujas.</li>
+                        <li><i>✓</i> <strong>Discreción Absoluta:</strong> Tus datos personales y de tu vehículo están protegidos por contratos de confidencialidad.</li>
+                    </ul>
+                    
+                    <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 15px;">
+                        <p style="font-family: var(--font-heading); font-weight: 600; color: var(--color-secondary);">¿Prefieres contacto directo inmediato?</p>
+                        <a href="https://wa.me/525500000000?text=Hola,%20solicito%20una%20cotización%20inmediata%20de%20blindaje%20para%20mi%20camioneta." target="_blank" class="btn btn-whatsapp" style="width: fit-content;">
+                            WhatsApp Confidencial (CDMX)
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="form-container" id="cotizar-formulario">
+                    <h3 class="text-white" style="margin-bottom: 5px; font-size: 1.5rem;">Formulario de Cotización</h3>
+                    <p style="color: var(--text-muted-light); font-size: 0.85rem; margin-bottom: 25px;">Llena los campos y recibe atención personalizada e inmediata.</p>
+                    
+                    <form class="quote-form">
+                        <div class="form-group">
+                            <label class="form-label">Nombre Completo *</label>
+                            <input type="text" name="nombre" class="form-input" placeholder="Ej. Carlos Ortiz" required>
+                        </div>
+                        
+                        <div class="form-group-grid">
+                            <div class="form-group">
+                                <label class="form-label">Correo Electrónico *</label>
+                                <input type="email" name="email" class="form-input" placeholder="carlos@ejemplo.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Teléfono o WhatsApp *</label>
+                                <input type="tel" name="telefono" class="form-input" placeholder="55 1234 5678" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group-grid">
+                            <div class="form-group">
+                                <label class="form-label">Modelo del vehículo *</label>
+                                <input type="text" name="vehiculo" class="form-input" placeholder="Ej. Suburban 2026" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Nivel de Blindaje de Interés *</label>
+                                <select name="vehiculo" class="form-input" required>
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="Nivel 3 (Urbano)">Nivel 3 (Protección Cristales y Aramida)</option>
+                                    <option value="Nivel 4 (Secuestro)">Nivel 4 (Armas Largas AK47)</option>
+                                    <option value="Nivel 5 (Atentado)">Nivel 5 (Armas de Alto Poder FAL/AR15)</option>
+                                    <option value="No estoy seguro">No estoy seguro / Deseo asesoría</option>
+                                    <option value="Seminuevo Blindado">Deseo un vehículo de Entrega Inmediata</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Mensaje adicional (opcional)</label>
+                            <textarea name="mensaje" class="form-input" placeholder="Cuéntanos brevemente si tienes alguna especificación especial sobre tus traslados en CDMX."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: var(--radius-sm);">Enviar Información</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo-container" style="margin-bottom: 20px;">
+                    <img src="assets/images/logo-blanco.png" alt="Smart Armor de México" class="logo-img">
+                </a>
+                <p>Empresa líder en blindaje automotriz discreto y ligero en México. Nos especializamos en proteger a familias y directivos con tecnología balística certificada.</p>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank" class="social-icon" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="social-icon" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="social-icon" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Menú de Navegación</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios y Niveles</a></li>
+                    <li><a href="casos-exito.html">Casos de Éxito</a></li>
+                    <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Blindajes CDMX</h3>
+                <ul class="footer-links">
+                    <li><a href="servicios.html#nivel3">Blindaje Nivel 3</a></li>
+                    <li><a href="servicios.html#nivel4">Blindaje Nivel 4</a></li>
+                    <li><a href="servicios.html#nivel5">Blindaje Nivel 5</a></li>
+                    <li><a href="servicios.html#cristales">Vidrios Blindados</a></li>
+                    <li><a href="servicios.html#seminuevos">Seminuevos Entrega Inmediata</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Datos de Contacto</h3>
+                <ul class="footer-contact-info">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Calle Campos Elíseos, Polanco, Miguel Hidalgo, 11560 Ciudad de México, CDMX
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        +52 (55) 1234-5678 (Oficina CDMX)
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        contacto@smartarmormexico.com
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        Lunes a Viernes: 8:00 AM - 6:00 PM
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <div class="footer-copy">
+                &copy; 2026 Smart Armor de México S.A. de C.V. Todos los derechos reservados. Blindaje Automotriz registrado ante la Dirección General de Seguridad Privada.
+            </div>
+            <div class="footer-legal-links">
+                <a href="#">Aviso de Privacidad</a>
+                <a href="#">Términos de Servicio</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/525500000000?text=Hola,%20necesito%20cotización%20confidencial%20de%20blindaje.%20Vi%20su%20web." class="whatsapp-float" target="_blank" aria-label="Contacto por WhatsApp">
+        <span class="whatsapp-float-badge">⚠️ CDMX Insegura: Protégete hoy en WhatsApp</span>
+        <div class="whatsapp-float-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.966C16.512 1.974 14.053.95 11.481.95 6.045.95 1.62 5.322 1.616 10.751c-.001 1.748.462 3.454 1.341 4.98L1.936 20.25l4.711-1.096zM17.51 14.1c-.287-.143-1.696-.837-1.959-.933-.262-.096-.452-.143-.642.143-.19.286-.736.933-.903 1.122-.167.19-.334.212-.62.071-.287-.143-1.21-.446-2.305-1.424-.853-.76-1.429-1.699-1.596-1.986-.167-.286-.018-.441.125-.582.129-.127.287-.335.43-.502.143-.167.19-.286.286-.477.096-.19.048-.357-.024-.5-.071-.143-.642-1.547-.88-2.12-.23-.559-.464-.482-.642-.491-.167-.008-.357-.01-.548-.01-.19 0-.5.071-.762.357-.262.286-1.002.977-1.002 2.383 0 1.407 1.025 2.766 1.168 2.957.143.19 2.017 3.08 4.887 4.318.684.295 1.218.471 1.634.603.687.219 1.312.188 1.808.115.552-.082 1.696-.693 1.935-1.362.24-.669.24-1.242.167-1.362-.072-.12-.262-.19-.549-.333z"/>
+            </svg>
+        </div>
+    </a>
+
+    <!-- Lógica de interactividad -->
+    <script src="js/main.js"></script>
+</body>
+</html>
