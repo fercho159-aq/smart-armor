@@ -337,6 +337,177 @@
             </div>
         </section>
 
+        <!-- COTIZADOR INTELIGENTE DE BLINDAJE -->
+        <section class="calculator-section section-padding" id="cotizador">
+            <div class="container">
+                <div class="text-center" style="max-width: 700px; margin: 0 auto 40px auto;">
+                    <span class="badge badge-cyan">Simulador de Seguridad</span>
+                    <h2>Cotizador Inteligente de Blindaje</h2>
+                    <p style="color: var(--text-muted-dark);">Selecciona las características de tu vehículo y tu nivel de exposición al riesgo para recibir una recomendación de blindaje inmediata y confidencial.</p>
+                </div>
+
+                <div class="calculator-wrapper">
+                    <!-- Configuración (Izquierda) -->
+                    <div class="calculator-left">
+                        <!-- Paso 1: Tipo de Vehículo -->
+                        <div class="calc-step-header">
+                            <h3>1. Selecciona tu Tipo de Vehículo</h3>
+                            <p>El peso y la estructura del chasis definen la viabilidad técnica de los materiales balísticos.</p>
+                        </div>
+                        <div class="calc-options-grid">
+                            <div class="calc-option-card selected" data-vehicle="sedan">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
+                                    <circle cx="7" cy="17" r="2"/>
+                                    <circle cx="17" cy="17" r="2"/>
+                                </svg>
+                                <h4>Sedán / Hatchback</h4>
+                            </div>
+                            <div class="calc-option-card" data-vehicle="suv-light">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2 12h5l2-3h6l2 3h5v5H2v-5z"/>
+                                    <circle cx="6" cy="17" r="2"/>
+                                    <circle cx="18" cy="17" r="2"/>
+                                    <path d="M14 9V6a2 2 0 0 0-2-2H9L7 6"/>
+                                </svg>
+                                <h4>Crossover / SUV Mediana</h4>
+                            </div>
+                            <div class="calc-option-card" data-vehicle="suv-heavy">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2 13h19c.6 0 1-.4 1-1V9a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v3z"/>
+                                    <rect x="2" y="11" width="20" height="6" rx="1"/>
+                                    <circle cx="6" cy="17" r="2.5"/>
+                                    <circle cx="17" cy="17" r="2.5"/>
+                                    <path d="M4 7V4h12l3 3H4z"/>
+                                </svg>
+                                <h4>SUV Grande (Suburban/Tahoe)</h4>
+                            </div>
+                            <div class="calc-option-card" data-vehicle="pickup">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2 13h10v4H2v-4z"/>
+                                    <path d="M12 13h10v2h-10v-2z"/>
+                                    <path d="M10 7v6h6V9a2 2 0 0 0-2-2h-4z"/>
+                                    <circle cx="6" cy="17" r="2"/>
+                                    <circle cx="17" cy="17" r="2"/>
+                                </svg>
+                                <h4>Pick-Up / Camioneta</h4>
+                            </div>
+                        </div>
+
+                        <!-- Paso 2: Amenazas / Exposición -->
+                        <div class="calc-step-header">
+                            <h3>2. Define tu Nivel de Exposición al Riesgo</h3>
+                            <p>El perfil del usuario y las vialidades determinan el tipo de calibres contra los que debes protegerte.</p>
+                        </div>
+                        <div class="threat-grid">
+                            <div class="threat-card selected" data-threat="low">
+                                <h4>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                    Asalto Urbano CDMX
+                                </h4>
+                                <p>Prevención de delincuencia común en tráfico. Protección contra armas cortas de calibres comunes (9mm, .357, .38).</p>
+                            </div>
+                            <div class="threat-card" data-threat="medium">
+                                <h4>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+                                    Robo con Violencia / Secuestro
+                                </h4>
+                                <p>Protección contra delincuencia organizada y armas de puño de alto poder (Magnum .44, Subametralladoras).</p>
+                            </div>
+                            <div class="threat-card" data-threat="high">
+                                <h4>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M8 11h8v2H8z"/></svg>
+                                    Atentado / Armas Largas
+                                </h4>
+                                <p>Máximo nivel de resguardo para perfiles de alto riesgo. Protección contra fusiles de asalto militares (AR-15, AK-47).</p>
+                            </div>
+                        </div>
+
+                        <!-- Paso 3: Cobertura -->
+                        <div class="calc-step-header">
+                            <h3>3. Cobertura del Blindaje</h3>
+                            <p>Elige si prefieres un blindaje completo o enfocado en la zona más vulnerable del vehículo.</p>
+                        </div>
+                        <div class="coverage-selector">
+                            <div class="coverage-card selected" data-coverage="glass">
+                                <div class="coverage-card-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/><path d="M15 3v18"/><path d="M3 9h18"/><path d="M3 15h18"/></svg>
+                                </div>
+                                <div class="coverage-card-text">
+                                    <h4>Únicamente Cristales</h4>
+                                    <p>Blindaje en parabrisas, vidrios laterales y medallón trasero.</p>
+                                </div>
+                            </div>
+                            <div class="coverage-card" data-coverage="full">
+                                <div class="coverage-card-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                </div>
+                                <div class="coverage-card-text">
+                                    <h4>Blindaje Integral (Opaco + Cristales)</h4>
+                                    <p>Habitáculo, puertas, postes, techo, piso, motor y neumáticos RunFlat.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resultados (Derecha) -->
+                    <div class="calculator-right">
+                        <div class="results-header-box">
+                            <span>Recomendación Smart Armor</span>
+                            <h4 id="calc-result-level">Nivel 3 Antiasalto</h4>
+                        </div>
+
+                        <div class="results-specs-list">
+                            <div class="results-spec-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <div class="results-spec-item-text">
+                                    <strong>Espesor de Cristales Balísticos</strong>
+                                    <span id="calc-result-glass">Vidrios Multicapa de 14mm</span>
+                                </div>
+                            </div>
+                            <div class="results-spec-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <div class="results-spec-item-text">
+                                    <strong>Materiales en Estructura Opaca</strong>
+                                    <span id="calc-result-opaque">Sin blindaje estructural opaco (sólo cristales)</span>
+                                </div>
+                            </div>
+                            <div class="results-spec-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <div class="results-spec-item-text">
+                                    <strong>Calibres que Resiste</strong>
+                                    <span id="calc-result-resistance">Magnum .357, 9mm FMJ, revólveres .38 Especial y similares.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="results-metrics-grid">
+                            <div class="results-metric-item">
+                                <span>Peso Estimado</span>
+                                <strong id="calc-result-weight">+130 kg aprox.</strong>
+                            </div>
+                            <div class="results-metric-item">
+                                <span>Modif. Suspensión</span>
+                                <strong id="calc-result-suspension">No Requerida</strong>
+                            </div>
+                        </div>
+
+                        <div class="results-price-box">
+                            <span>Inversión Estimada Rango</span>
+                            <div class="results-price-value" id="calc-result-price">$18,000 <span>USD</span></div>
+                        </div>
+
+                        <a href="#" id="calc-whatsapp-btn" class="btn btn-whatsapp text-center" style="display: flex; align-items: center; justify-content: center; gap: 10px; font-weight: 700; width: 100%;" target="_blank">
+                            <svg viewBox="0 0 24 24" fill="currentColor" style="width: 20px; height: 20px;">
+                                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.966C16.512 1.974 14.053.95 11.481.95 6.045.95 1.62 5.322 1.616 10.751c-.001 1.748.462 3.454 1.341 4.98L1.936 20.25l4.711-1.096zM17.51 14.1c-.287-.143-1.696-.837-1.959-.933-.262-.096-.452-.143-.642.143-.19.286-.736.933-.903 1.122-.167.19-.334.212-.62.071-.287-.143-1.21-.446-2.305-1.424-.853-.76-1.429-1.699-1.596-1.986-.167-.286-.018-.441.125-.582.129-.127.287-.335.43-.502.143-.167.19-.286.286-.477.096-.19.048-.357-.024-.5-.071-.143-.642-1.547-.88-2.12-.23-.559-.464-.482-.642-.491-.167-.008-.357-.01-.548-.01-.19 0-.5.071-.762.357-.262.286-1.002.977-1.002 2.383 0 1.407 1.025 2.766 1.168 2.957.143.19 2.017 3.08 4.887 4.318.684.295 1.218.471 1.634.603.687.219 1.312.188 1.808.115.552-.082 1.696-.693 1.935-1.362.24-.669.24-1.242.167-1.362-.072-.12-.262-.19-.549-.333z"/>
+                            </svg>
+                            Recibir Ficha Técnica por WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- TESTIMONIALS SECTION (PASTOR - Testimonios y Storytelling) -->
         <section class="testimonials bg-dark-section section-padding">
             <div class="container">

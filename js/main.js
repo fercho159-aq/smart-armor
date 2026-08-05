@@ -149,4 +149,188 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1500);
         });
     });
+
+    // ==========================================================================
+    // COTIZADOR INTERACTIVO DE BLINDAJE
+    // ==========================================================================
+    const vehicleCards = document.querySelectorAll('.calc-option-card');
+    const threatCards = document.querySelectorAll('.threat-card');
+    const coverageCards = document.querySelectorAll('.coverage-card');
+
+    if (vehicleCards.length > 0) {
+        let selectedVehicle = 'sedan';
+        let selectedThreat = 'low';
+        let selectedCoverage = 'glass';
+
+        const updateCalculator = () => {
+            const levelTitle = document.getElementById('calc-result-level');
+            const glassText = document.getElementById('calc-result-glass');
+            const opaqueText = document.getElementById('calc-result-opaque');
+            const resistanceText = document.getElementById('calc-result-resistance');
+            const weightText = document.getElementById('calc-result-weight');
+            const suspensionText = document.getElementById('calc-result-suspension');
+            const priceText = document.getElementById('calc-result-price');
+            const whatsappBtn = document.getElementById('calc-whatsapp-btn');
+
+            let level = '';
+            let glass = '';
+            let opaque = '';
+            let resistance = '';
+            let weight = '';
+            let suspension = '';
+            let price = '';
+            
+            // Textos amigables para WhatsApp
+            let vehicleLabel = '';
+            let threatLabel = '';
+            let coverageLabel = '';
+
+            // Vehículo Label
+            switch(selectedVehicle) {
+                case 'sedan': vehicleLabel = 'Sedán / Hatchback'; break;
+                case 'suv-light': vehicleLabel = 'SUV Mediana / Crossover'; break;
+                case 'suv-heavy': vehicleLabel = 'SUV Grande (Suburban/Tahoe)'; break;
+                case 'pickup': vehicleLabel = 'Pick-Up'; break;
+            }
+
+            // Cobertura Label
+            if (selectedCoverage === 'glass') {
+                coverageLabel = 'Sólo Cristales';
+            } else {
+                coverageLabel = 'Integral (Cristales + Opaco)';
+            }
+
+            // Determinación de Nivel según Amenaza
+            if (selectedThreat === 'low') {
+                level = 'Nivel 3 (Antiasalto Urbano)';
+                threatLabel = 'Bajo / Delincuencia Común';
+                glass = 'Vidrios Multicapa de 14mm';
+                resistance = 'Armas cortas: Calibres 9mm, .357 Magnum, .38 Especial y menores.';
+                
+                if (selectedCoverage === 'glass') {
+                    opaque = 'Sin blindaje opaco estructural.';
+                    price = '$18,000';
+                    switch(selectedVehicle) {
+                        case 'sedan': weight = '+75 kg'; suspension = 'No Requerida'; break;
+                        case 'suv-light': weight = '+90 kg'; suspension = 'No Requerida'; break;
+                        case 'suv-heavy': weight = '+115 kg'; suspension = 'No Requerida'; break;
+                        case 'pickup': weight = '+105 kg'; suspension = 'No Requerida'; break;
+                    }
+                } else {
+                    opaque = 'Fibras de Aramida / Kevlar (9 capas) en puertas y postes.';
+                    price = '$35,000';
+                    switch(selectedVehicle) {
+                        case 'sedan': weight = '+170 kg'; suspension = 'Opcional'; break;
+                        case 'suv-light': weight = '+210 kg'; suspension = 'Recomendada'; break;
+                        case 'suv-heavy': weight = '+280 kg'; suspension = 'Recomendada'; break;
+                        case 'pickup': weight = '+260 kg'; suspension = 'Recomendada'; break;
+                    }
+                }
+            } else if (selectedThreat === 'medium') {
+                level = 'Nivel 4 (Secuestro / Violencia)';
+                threatLabel = 'Medio / Robo con Violencia';
+                glass = 'Vidrios Balísticos de 21mm';
+                resistance = 'Asalto Organizado: Magnum .44, Subametralladoras 9mm y Escopetas Cal. 12.';
+                
+                if (selectedCoverage === 'glass') {
+                    opaque = 'Sin blindaje opaco estructural.';
+                    price = '$23,000';
+                    switch(selectedVehicle) {
+                        case 'sedan': weight = '+125 kg'; suspension = 'No Requerida'; break;
+                        case 'suv-light': weight = '+150 kg'; suspension = 'Recomendada'; break;
+                        case 'suv-heavy': weight = '+190 kg'; suspension = 'Recomendada'; break;
+                        case 'pickup': weight = '+180 kg'; suspension = 'Recomendada'; break;
+                    }
+                } else {
+                    opaque = 'Kevlar UD combinado con placas de acero balístico sueco SSAB en puntos clave.';
+                    price = '$48,000';
+                    switch(selectedVehicle) {
+                        case 'sedan': weight = '+260 kg'; suspension = 'Recomendada'; break;
+                        case 'suv-light': weight = '+340 kg'; suspension = 'Obligatoria'; break;
+                        case 'suv-heavy': weight = '+440 kg'; suspension = 'Obligatoria'; break;
+                        case 'pickup': weight = '+410 kg'; suspension = 'Obligatoria'; break;
+                    }
+                }
+            } else {
+                level = 'Nivel 5 (Atentado / Militar)';
+                threatLabel = 'Alto / Armas Largas';
+                glass = 'Vidrios Balísticos de 42mm';
+                resistance = 'Fusiles de Asalto: AR-15 (5.56x45), AK-47 (7.62x39), FAL (7.62x51 NATO) y menores.';
+                
+                if (selectedCoverage === 'glass') {
+                    opaque = 'Sin blindaje opaco estructural.';
+                    price = '$35,000';
+                    switch(selectedVehicle) {
+                        case 'sedan': weight = '+210 kg'; suspension = 'Recomendada'; break;
+                        case 'suv-light': weight = '+250 kg'; suspension = 'Recomendada'; break;
+                        case 'suv-heavy': weight = '+310 kg'; suspension = 'Obligatoria'; break;
+                        case 'pickup': weight = '+295 kg'; suspension = 'Obligatoria'; break;
+                    }
+                } else {
+                    opaque = 'Acero Balístico Sueco de 6.5mm en habitáculo completo y traslapes. RunFlats en llantas.';
+                    price = '$72,000';
+                    switch(selectedVehicle) {
+                        case 'sedan': weight = '+420 kg'; suspension = 'Obligatoria'; break;
+                        case 'suv-light': weight = '+520 kg'; suspension = 'Obligatoria'; break;
+                        case 'suv-heavy': weight = '+680 kg'; suspension = 'Obligatoria'; break;
+                        case 'pickup': weight = '+630 kg'; suspension = 'Obligatoria'; break;
+                    }
+                }
+            }
+
+            // Actualizar interfaz
+            if (levelTitle) levelTitle.textContent = level;
+            if (glassText) glassText.textContent = glass;
+            if (opaqueText) opaqueText.textContent = opaque;
+            if (resistanceText) resistanceText.textContent = resistance;
+            if (weightText) weightText.textContent = `${weight} aprox.`;
+            if (suspensionText) suspensionText.textContent = suspension;
+            if (priceText) priceText.innerHTML = `${price} <span>USD</span>`;
+
+            // Construir enlace de WhatsApp
+            const messageText = `Hola Smart Armor, utilicé el cotizador en línea y me interesa una cotización formal.
+Vehículo: *${vehicleLabel}*
+Amenaza / Riesgo: *${threatLabel}*
+Tipo de Blindaje: *${coverageLabel}*
+Recomendación sugerida: *${level}*
+Inversión aproximada: *${price} USD*`;
+
+            if (whatsappBtn) {
+                whatsappBtn.href = `https://wa.me/525500000000?text=${encodeURIComponent(messageText)}`;
+            }
+        };
+
+        // Listeners Vehículos
+        vehicleCards.forEach(card => {
+            card.addEventListener('click', () => {
+                vehicleCards.forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+                selectedVehicle = card.getAttribute('data-vehicle');
+                updateCalculator();
+            });
+        });
+
+        // Listeners Amenazas
+        threatCards.forEach(card => {
+            card.addEventListener('click', () => {
+                threatCards.forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+                selectedThreat = card.getAttribute('data-threat');
+                updateCalculator();
+            });
+        });
+
+        // Listeners Cobertura
+        coverageCards.forEach(card => {
+            card.addEventListener('click', () => {
+                coverageCards.forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+                selectedCoverage = card.getAttribute('data-coverage');
+                updateCalculator();
+            });
+        });
+
+        // Inicializar
+        updateCalculator();
+    }
 });
