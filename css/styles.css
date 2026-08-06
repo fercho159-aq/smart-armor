@@ -6,13 +6,13 @@
 :root {
     /* Colores */
     --bg-dark: #00187e;
-    --bg-dark-card: #0022b3;
+    --bg-dark-card: #00115a;
     --bg-light: #ffffff;
     --bg-light-gray: #f4f6f9;
-    --color-primary: #0056ff;
-    --color-primary-hover: #0046cf;
-    --color-secondary: #00e5ff;
-    --color-secondary-hover: #00b8cc;
+    --color-primary: #0031ff;
+    --color-primary-hover: #0026c7;
+    --color-secondary: #0031ff;
+    --color-secondary-hover: #0026c7;
     --color-danger: #ff3b30;
     --color-warning: #ffcc00;
     
@@ -33,7 +33,7 @@
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 20px 45px rgba(0, 0, 0, 0.15);
-    --shadow-cyan: 0 0 20px rgba(0, 229, 255, 0.25);
+    --shadow-cyan: 0 0 20px rgba(0, 49, 255, 0.25);
     
     /* Transiciones */
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -160,7 +160,7 @@ button, input, select, textarea {
     background-color: transparent;
     color: var(--color-secondary);
     border: 2px solid var(--color-secondary);
-    box-shadow: 0 0 10px rgba(0, 229, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 49, 255, 0.1);
 }
 .btn-outline-cyan:hover {
     background-color: var(--color-secondary);
@@ -191,9 +191,9 @@ button, input, select, textarea {
     margin-bottom: 15px;
 }
 .badge-cyan {
-    background-color: rgba(0, 229, 255, 0.1);
+    background-color: rgba(0, 49, 255, 0.1);
     color: var(--color-secondary);
-    border: 1px solid rgba(0, 229, 255, 0.3);
+    border: 1px solid rgba(0, 49, 255, 0.3);
 }
 .badge-danger {
     background-color: rgba(255, 59, 48, 0.1);
@@ -214,7 +214,7 @@ button, input, select, textarea {
    HEADER / NAVEGACIÓN
    ========================================================================== */
 header {
-    background-color: rgba(3, 10, 22, 0.95);
+    background-color: rgba(0, 24, 126, 0.95);
     backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
@@ -362,7 +362,7 @@ header {
     
     .mega-card {
         background: var(--bg-dark-card);
-        border: 1px solid rgba(0, 229, 255, 0.1);
+        border: 1px solid rgba(0, 49, 255, 0.1);
         padding: 20px;
         border-radius: var(--radius-md);
         text-align: center;
@@ -505,7 +505,7 @@ header {
     display: flex;
     align-items: center;
     background: radial-gradient(circle at top right, rgba(0, 86, 255, 0.15), transparent 60%),
-                radial-gradient(circle at bottom left, rgba(0, 229, 255, 0.05), transparent 40%),
+                radial-gradient(circle at bottom left, rgba(0, 49, 255, 0.05), transparent 40%),
                 var(--bg-dark);
     position: relative;
     overflow: hidden;
@@ -608,7 +608,7 @@ header {
     left: 25px;
     background: rgba(3, 10, 22, 0.85);
     backdrop-filter: blur(5px);
-    border: 1px solid rgba(0, 229, 255, 0.3);
+    border: 1px solid rgba(0, 49, 255, 0.3);
     padding: 10px 15px;
     border-radius: var(--radius-sm);
     color: var(--color-secondary);
@@ -647,7 +647,7 @@ header {
    AGITACIÓN (Fórmula PASTOR - Agitación de Ansiedad)
    ========================================================================== */
 .agitation {
-    background-color: #030811;
+    background-color: var(--bg-dark);
     position: relative;
     border-top: 1px solid rgba(255, 59, 48, 0.1);
 }
@@ -910,7 +910,7 @@ header {
    TESTIMONIALS / TESTIMONIOS (Fórmula PASTOR - Testimonios y Storytelling)
    ========================================================================== */
 .testimonials {
-    background-color: #040c18;
+    background-color: var(--bg-dark);
 }
 
 .testimonial-container {
@@ -1101,7 +1101,7 @@ header {
 .form-input:focus {
     border-color: var(--color-secondary);
     background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 0 10px rgba(0, 229, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 49, 255, 0.1);
 }
 
 select.form-input {
@@ -1400,7 +1400,7 @@ textarea.form-input {
    FOOTER / PIE DE PÁGINA
    ========================================================================== */
 footer {
-    background-color: #02070f;
+    background-color: var(--bg-dark);
     color: var(--text-light);
     padding: 60px 0 20px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
