@@ -13,10 +13,7 @@
     --bg-alt: #F3F3F6;
     --font: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
   }
-  @media (prefers-color-scheme: dark) {
-    :root { --ink: #E4E4EA; --ink-2: #A0A0AA; --ink-3: #7A7A86; --rule: #36363E; --bg: #141417; --bg-alt: #1E1E22; }
-  }
-  :root[data-theme="dark"] { --ink: #E4E4EA; --ink-2: #A0A0AA; --ink-3: #7A7A86; --rule: #36363E; --bg: #141417; --bg-alt: #1E1E22; }
+  @media print { body { background: white; } .page { max-width: none; margin: 0; padding: 0; box-shadow: none; page-break-after: always; } .page:last-child { page-break-after: auto; } }
   :root[data-theme="light"] { --ink: #111114; --ink-2: #52525A; --ink-3: #72727E; --rule: #D1D1D8; --bg: #FFFFFF; --bg-alt: #F3F3F6; }
 
   body { font-family: var(--font); color: var(--ink); background: var(--bg-alt); line-height: 1.55; -webkit-font-smoothing: antialiased; }
@@ -79,12 +76,13 @@
   <div class="accent-bar"></div>
   <div class="header">
     <div class="header-left">
-      <img src="assets/images/logo-blanco.png" alt="Smart Armor" class="header-logo">
+      <img src="assets/images/logo.png" alt="Smart Armor" class="header-logo">
     </div>
     <div class="header-right">
       <div class="brand-tag">Propuesta por</div>
       <div class="brand-name">MAW Soluciones</div>
       <div class="doc-date">Agosto 2026 &middot; COT-SA-001</div>
+      <div style="margin-top: 4px;"><a href="https://smart-armor-three.vercel.app" target="_blank" style="color: var(--blue); text-decoration: none; font-size: 11px; font-weight: 600;">Ver Demo del Sitio Web &rarr;</a></div>
     </div>
   </div>
   <hr>

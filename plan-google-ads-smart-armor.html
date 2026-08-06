@@ -13,10 +13,7 @@
     --bg-alt: #F3F3F6;
     --font: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
   }
-  @media (prefers-color-scheme: dark) {
-    :root { --ink: #E4E4EA; --ink-2: #A0A0AA; --ink-3: #7A7A86; --rule: #36363E; --bg: #141417; --bg-alt: #1E1E22; }
-  }
-  :root[data-theme="dark"] { --ink: #E4E4EA; --ink-2: #A0A0AA; --ink-3: #7A7A86; --rule: #36363E; --bg: #141417; --bg-alt: #1E1E22; }
+  @media print { body { background: white; } .page { max-width: none; margin: 0; padding: 0; box-shadow: none; page-break-after: always; } .page:last-child { page-break-after: auto; } }
   :root[data-theme="light"] { --ink: #111114; --ink-2: #52525A; --ink-3: #72727E; --rule: #D1D1D8; --bg: #FFFFFF; --bg-alt: #F3F3F6; }
 
   body { font-family: var(--font); color: var(--ink); background: var(--bg-alt); line-height: 1.55; -webkit-font-smoothing: antialiased; }
@@ -101,113 +98,106 @@
   <div class="accent-bar"></div>
   <div class="header">
     <div class="header-left">
-      <img src="assets/images/logo-blanco.png" alt="Smart Armor" class="header-logo">
+      <img src="assets/images/logo.png" alt="Smart Armor" class="header-logo">
     </div>
     <div class="header-right">
       <div class="brand-tag">Preparado por</div>
       <div class="brand-name">MAW Soluciones</div>
       <div class="doc-date">Agosto 2026</div>
+      <div style="margin-top: 4px;"><a href="https://smart-armor-three.vercel.app" target="_blank" style="color: var(--blue); text-decoration: none; font-size: 11px; font-weight: 600;">Ver Demo del Sitio Web &rarr;</a></div>
     </div>
   </div>
   <hr>
   <div class="doc-title">Plan de Arranque<br>Google Ads</div>
   <div class="doc-subtitle">Estrategia de posicionamiento en buscadores para Smart Armor</div>
-  <p class="body-text">Estrategia diseñada para posicionar a Smart Armor en los primeros resultados de Google cuando usuarios en todo México busquen servicios de blindaje vehicular. Los anuncios generarán tráfico calificado hacia la landing page, donde el diseño optimizado convertirá visitas en solicitudes de cotización.</p>
+  
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; margin-bottom: 24px;">
+    <div>
+      <p class="body-text" style="margin-bottom: 0;">Estrategia diseñada para posicionar a Smart Armor en los primeros resultados de Google cuando usuarios en todo México busquen servicios de blindaje vehicular. Los anuncios generarán tráfico calificado hacia la landing page, donde el diseño optimizado convertirá visitas en solicitudes de cotización.</p>
+    </div>
+    <div>
+      <img src="assets/images/mac_mockup.jpg" style="width: 100%; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: block;" alt="Sitio Web Smart Armor Mockup">
+    </div>
+  </div>
+
   <hr>
   <div class="mt-s">
-    <div class="section-label">Ejemplos de anuncios de búsqueda</div>
-    <div class="ad-mock">
-      <div class="ad-sponsored">Patrocinado</div>
-      <div class="ad-url">www.smartarmor.mx/blindaje</div>
-      <div class="ad-headline">Blindaje Automotriz Certificado — Smart Armor</div>
-      <div class="ad-desc">Protege tu vehículo con blindaje de nivel mundial. Materiales certificados y garantía total. Solicita tu cotización sin compromiso.</div>
-    </div>
-    <div class="ad-mock">
-      <div class="ad-sponsored">Patrocinado</div>
-      <div class="ad-url">www.smartarmor.mx/servicios</div>
-      <div class="ad-headline">Blinda Tu Auto — Expertos en Nivel II, III y IIIA</div>
-      <div class="ad-desc">Más de 10 años blindando vehículos en México. Atención personalizada y financiamiento disponible. Agenda tu cita hoy.</div>
-    </div>
-    <div class="ad-mock">
-      <div class="ad-sponsored">Patrocinado</div>
-      <div class="ad-url">www.smartarmor.mx/cotiza</div>
-      <div class="ad-headline">¿Cuánto Cuesta Blindar Tu Auto? — Smart Armor</div>
-      <div class="ad-desc">Paquetes de blindaje desde nivel II hasta nivel V. Cotiza en línea en minutos. Calidad certificada a precios competitivos.</div>
+    <div class="section-label">Proyecciones de rendimiento mensual</div>
+    <table class="data-table">
+      <thead><tr><th style="width:36%">Métrica</th><th>Conservador</th><th class="highlight">Recomendado</th><th>Agresivo</th></tr></thead>
+      <tbody>
+        <tr><td class="row-label">Inversión mensual</td><td>$5,000</td><td class="col-highlight">$8,000</td><td>$15,000</td></tr>
+        <tr><td class="row-label">CPC promedio</td><td>$16</td><td class="col-highlight">$14</td><td>$12</td></tr>
+        <tr><td class="row-label">Clics estimados</td><td>312</td><td class="col-highlight">571</td><td>1,250</td></tr>
+        <tr><td class="row-label">Tasa de conversión</td><td>5%</td><td class="col-highlight">7%</td><td>8%</td></tr>
+        <tr><td class="row-label">Leads estimados</td><td>16</td><td class="col-highlight">40</td><td>100</td></tr>
+      </tbody>
+    </table>
+    <div class="footnote" style="margin-bottom: 20px;">*Proyecciones basadas en promedios del sector automotriz y seguridad en México. Montos en MXN. Resultados reales pueden variar.</div>
+    
+    <div class="section-label mt-m">Segmentación de la campaña</div>
+    <div class="seg-grid">
+      <div class="seg-item"><strong>Cobertura geográfica</strong>República Mexicana — todas las ciudades y estados</div>
+      <div class="seg-item"><strong>Dispositivos</strong>Móvil (prioridad 70%) + Desktop (30%)</div>
+      <div class="seg-item"><strong>Horarios activos</strong>Lunes a sábado, 7:00 AM – 10:00 PM</div>
+      <div class="seg-item"><strong>Audiencia objetivo</strong>Propietarios de vehículos, empresarios, ejecutivos y familias</div>
     </div>
   </div>
-  <div class="callout">
-    <strong>Sinergia con la landing page</strong>
-    Cada anuncio dirige al usuario a la sección relevante de la landing page. El mensaje, tono y propuesta de valor se mantienen consistentes desde el anuncio hasta el formulario de contacto, reduciendo la fricción y aumentando la tasa de conversión.
-  </div>
-  <div class="page-footer"><span>MAW Soluciones</span><span>Página 1 de 3</span></div>
+  
+  <div class="page-footer"><span>MAW Soluciones</span><span>Página 1 de 2</span></div>
 </div>
 
 <!-- PAGE 2 -->
 <div class="page">
   <div class="accent-bar-thin"></div>
-  <div class="section-label">Proyecciones de rendimiento mensual</div>
-  <table class="data-table">
-    <thead><tr><th style="width:36%">Métrica</th><th>Conservador</th><th class="highlight">Recomendado</th><th>Agresivo</th></tr></thead>
-    <tbody>
-      <tr><td class="row-label">Inversión mensual</td><td>$5,000</td><td class="col-highlight">$8,000</td><td>$15,000</td></tr>
-      <tr><td class="row-label">CPC promedio</td><td>$16</td><td class="col-highlight">$14</td><td>$12</td></tr>
-      <tr><td class="row-label">Clics estimados</td><td>312</td><td class="col-highlight">571</td><td>1,250</td></tr>
-      <tr><td class="row-label">Impresiones</td><td>~8,900</td><td class="col-highlight">~13,600</td><td>~26,000</td></tr>
-      <tr><td class="row-label">CTR estimado</td><td>3.5%</td><td class="col-highlight">4.2%</td><td>4.8%</td></tr>
-      <tr><td class="row-label">Tasa de conversión</td><td>5%</td><td class="col-highlight">7%</td><td>8%</td></tr>
-      <tr><td class="row-label">Leads estimados</td><td>16</td><td class="col-highlight">40</td><td>100</td></tr>
-    </tbody>
-  </table>
-  <div class="footnote">*Proyecciones basadas en promedios del sector automotriz y seguridad en México. Montos en MXN. Resultados reales pueden variar.</div>
-  <div class="section-label mt-m">Leads estimados por escenario</div>
-  <div class="bar-chart">
-    <div class="bar-row"><span class="bar-label">Conservador</span><div class="bar-track"><div class="bar-fill" style="width:16%"><span class="bar-value">16</span></div></div></div>
-    <div class="bar-row"><span class="bar-label">Recomendado</span><div class="bar-track"><div class="bar-fill bar-fill--rec" style="width:40%"><span class="bar-value">40</span></div></div></div>
-    <div class="bar-row"><span class="bar-label">Agresivo</span><div class="bar-track"><div class="bar-fill" style="width:100%"><span class="bar-value">100</span></div></div></div>
-  </div>
-  <hr>
-  <div class="section-label mt-s">Segmentación de la campaña</div>
-  <div class="seg-grid">
-    <div class="seg-item"><strong>Cobertura geográfica</strong>República Mexicana — todas las ciudades y estados</div>
-    <div class="seg-item"><strong>Dispositivos</strong>Móvil (prioridad 70%) + Desktop (30%)</div>
-    <div class="seg-item"><strong>Horarios activos</strong>Lunes a sábado, 7:00 AM – 10:00 PM</div>
-    <div class="seg-item"><strong>Audiencia objetivo</strong>Propietarios de vehículos, empresarios, ejecutivos y familias</div>
-  </div>
-  <div class="page-footer"><span>MAW Soluciones</span><span>Página 2 de 3</span></div>
-</div>
+  
+  <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 30px;">
+    <div>
+      <div class="section-label">Palabras clave principales</div>
+      <table class="kw-table">
+        <thead><tr><th>Palabra clave</th><th>Intención</th></tr></thead>
+        <tbody>
+          <tr><td>blindaje automotriz</td><td class="intent-alta">Alta</td></tr>
+          <tr><td>blindaje vehicular</td><td class="intent-alta">Alta</td></tr>
+          <tr><td>blindar auto</td><td class="intent-alta">Alta</td></tr>
+          <tr><td>cuánto cuesta blindar un auto</td><td class="intent-alta">Alta</td></tr>
+          <tr><td>empresa de blindaje</td><td class="intent-alta">Alta</td></tr>
+          <tr><td>blindaje nivel III / IIIA</td><td class="intent-alta">Alta</td></tr>
+          <tr><td>blindaje certificado</td><td class="intent-alta">Alta</td></tr>
+        </tbody>
+      </table>
 
-<!-- PAGE 3 -->
-<div class="page">
-  <div class="accent-bar-thin"></div>
-  <div class="section-label">Palabras clave principales</div>
-  <table class="kw-table">
-    <thead><tr><th>Palabra clave</th><th>Intención</th></tr></thead>
-    <tbody>
-      <tr><td>blindaje automotriz</td><td class="intent-alta">Alta</td></tr>
-      <tr><td>blindaje vehicular</td><td class="intent-alta">Alta</td></tr>
-      <tr><td>blindar auto</td><td class="intent-alta">Alta</td></tr>
-      <tr><td>blindaje de autos</td><td class="intent-alta">Alta</td></tr>
-      <tr><td>cuánto cuesta blindar un auto</td><td class="intent-alta">Alta</td></tr>
-      <tr><td>empresa de blindaje</td><td class="intent-alta">Alta</td></tr>
-      <tr><td>blindaje de camionetas</td><td class="intent-alta">Alta</td></tr>
-      <tr><td>cotización blindaje vehicular</td><td class="intent-alta">Alta</td></tr>
-      <tr><td>blindaje nivel III</td><td class="intent-alta">Alta</td></tr>
-      <tr><td>blindaje nivel IIIA</td><td class="intent-alta">Alta</td></tr>
-      <tr><td>blindaje antibalas</td><td class="intent-alta">Alta</td></tr>
-      <tr><td>blindaje certificado</td><td class="intent-alta">Alta</td></tr>
-      <tr><td>taller de blindaje</td><td class="intent-media">Media</td></tr>
-      <tr><td>autos blindados México</td><td class="intent-media">Media</td></tr>
-      <tr><td>blindaje balístico</td><td class="intent-media">Media</td></tr>
-    </tbody>
-  </table>
-  <div class="section-label mt-m">Palabras clave negativas</div>
-  <p class="body-text" style="max-width:100%;margin-bottom:10px">Términos excluidos para evitar clics irrelevantes y proteger el presupuesto de la campaña:</p>
-  <div class="neg-kw">
-    <span>gratis</span><span>empleo</span><span>trabajo</span><span>vacantes</span><span>curso</span><span>capacitación</span><span>escuela</span><span>película</span><span>serie</span><span>videojuego</span><span>juego</span><span>GTA</span><span>blindaje espiritual</span><span>celular</span><span>pantalla</span><span>descargar</span><span>pdf</span><span>tesis</span><span>noticias</span><span>wikipedia</span><span>seminuevo</span><span>usado</span><span>accidente</span><span>choque</span>
+      <div class="section-label" style="margin-top:20px;">Palabras clave negativas</div>
+      <div class="neg-kw">
+        <span>gratis</span><span>empleo</span><span>vacantes</span><span>curso</span><span>escuela</span><span>película</span><span>videojuego</span><span>celular</span><span>descargar</span><span>seminuevo</span><span>usado</span>
+      </div>
+    </div>
+    
+    <div>
+      <div class="section-label">Ejemplos de anuncios de búsqueda</div>
+      <div class="ad-mock">
+        <div class="ad-sponsored">Patrocinado</div>
+        <div class="ad-url">www.smartarmor.mx/blindaje</div>
+        <div class="ad-headline">Blindaje Automotriz Certificado — Smart Armor</div>
+        <div class="ad-desc">Protege tu vehículo con blindaje de nivel mundial. Materiales certificados y garantía total. Solicita tu cotización sin compromiso.</div>
+      </div>
+      <div class="ad-mock">
+        <div class="ad-sponsored">Patrocinado</div>
+        <div class="ad-url">www.smartarmor.mx/cotiza</div>
+        <div class="ad-headline">¿Cuánto Cuesta Blindar Tu Auto? — Smart Armor</div>
+        <div class="ad-desc">Paquetes de blindaje desde nivel II hasta nivel V. Cotiza en línea en minutos. Calidad certificada a precios competitivos.</div>
+      </div>
+      <div class="callout" style="margin-top: 14px;">
+        <strong>Sinergia con la landing page</strong>
+        Cada anuncio dirige al usuario a la sección relevante de la landing page. El mensaje, tono y propuesta de valor se mantienen consistentes.
+      </div>
+    </div>
   </div>
+
   <div class="cta-block">
     <h3>Siguiente paso</h3>
     <p>Active su campaña con MAW Soluciones. La inversión publicitaria se cobra directamente por Google — nosotros nos encargamos de la estrategia, configuración, optimización continua y reportes de rendimiento para que cada peso invertido genere resultados.</p>
   </div>
-  <div class="page-footer"><span>MAW Soluciones &middot; contacto@mawsoluciones.com</span><span>Página 3 de 3</span></div>
+  
+  <div class="page-footer"><span>MAW Soluciones &middot; contacto@mawsoluciones.com</span><span>Página 2 de 2</span></div>
 </div>
