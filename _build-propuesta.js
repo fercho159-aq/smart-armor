@@ -4,7 +4,7 @@ const base = 'C:/Users/alexi/Desktop/smart-armor';
 const b64 = (f, t) => `data:image/${t};base64,${fs.readFileSync(path.join(base, f)).toString('base64')}`;
 const logoW = b64('assets/images/logo-blanco.png', 'png');
 const capCotizador = b64('captura-cotizador.png', 'png');
-const capHeroMobile = b64('captura-hero-mobile.png', 'png');
+const capHeroDesktop = b64('captura-hero-desktop.png', 'png');
 
 const CSS = `
 @page { size: letter; margin: 12mm 16mm; }
@@ -343,7 +343,7 @@ const html = `<title>Propuesta Publicidad Digital — Smart Armor</title>
   <p class="body">Demo en línea: <a href="https://www.blindajesmartarmor.com" style="color:var(--blue);font-weight:600;">www.blindajesmartarmor.com</a></p>
   <div class="lp-slots">
     <div class="lp-slot"><img src="${capCotizador}" alt="Cotizador interactivo"><div class="lp-slot-label">Cotizador interactivo</div></div>
-    <div class="lp-slot"><img src="${capHeroMobile}" alt="Hero en móvil"><div class="lp-slot-label">Vista móvil (Hero)</div></div>
+    <div class="lp-slot"><img src="${capHeroDesktop}" alt="Hero desktop"><div class="lp-slot-label">Hero principal (Desktop)</div></div>
   </div>
 
   <hr>
