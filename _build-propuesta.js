@@ -2,9 +2,15 @@ const fs = require('fs');
 const path = require('path');
 const base = 'C:/Users/alexi/Desktop/smart-armor';
 const b64 = (f, t) => `data:image/${t};base64,${fs.readFileSync(path.join(base, f)).toString('base64')}`;
+const tryB64 = (f, t) => { try { return b64(f, t); } catch { return null; } };
 const logoW = b64('assets/images/logo-blanco.png', 'png');
-const capCotizador = b64('captura-cotizador.png', 'png');
-const capHeroDesktop = b64('captura-hero-desktop.png', 'png');
+const tt1 = tryB64('tiktok/Screenshot_1.png', 'png');
+const tt2 = tryB64('tiktok/Screenshot_2.png', 'png');
+const tt3 = tryB64('tiktok/Screenshot_3.png', 'png');
+
+const ttSlot = (img, label, views) => img
+  ? `<div class="tt-slot"><img src="${img}" alt="${label}"><div class="tt-meta"><span class="tt-views">▶ ${views} reproducciones</span></div></div>`
+  : `<div class="tt-slot tt-slot--ph"><div class="tt-ph-label">${label}</div><div class="tt-meta"><span class="tt-views">▶ ${views}</span></div></div>`;
 
 const CSS = `
 @page { size: letter; margin: 12mm 16mm; }
@@ -12,7 +18,6 @@ const CSS = `
 :root {
   --blue: #0031ff; --navy: #00187e; --ink: #111114; --ink-2: #52525A;
   --ink-3: #72727E; --rule: #D1D1D8; --bg: #FFFFFF; --bg-alt: #F3F3F6;
-  --green: #16a34a; --amber: #d97706;
   --font: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
 }
 body { font-family:var(--font); color:var(--ink); background:var(--bg-alt); line-height:1.5; -webkit-font-smoothing:antialiased; }
@@ -59,13 +64,18 @@ hr { border:none; border-top:1px solid var(--rule); }
 .seg { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:12px 0 16px; }
 .seg-item { font-size:12px; line-height:1.5; }
 .seg-item strong { display:block; font-size:9.5px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3); margin-bottom:2px; }
-.seg-full { grid-column:1/-1; }
 
-/* Ad placeholder */
-.ad-slots { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:14px 0; }
-.ad-slot { border:2px dashed var(--rule); border-radius:10px; aspect-ratio:9/16; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:16px; background:var(--bg-alt); }
-.ad-slot-num { font-size:28px; font-weight:700; color:var(--rule); line-height:1; }
-.ad-slot-label { font-size:10px; color:var(--ink-3); margin-top:6px; letter-spacing:.08em; text-transform:uppercase; }
+/* TikTok ad screenshots */
+.tt-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:14px 0; }
+.tt-slot { border-radius:12px; overflow:hidden; background:#000; position:relative; }
+.tt-slot img { width:100%; height:auto; display:block; }
+.tt-slot--ph { aspect-ratio:9/16; display:flex; flex-direction:column; align-items:center; justify-content:center; border:2px dashed var(--rule); background:var(--bg-alt); border-radius:12px; }
+.tt-ph-label { font-size:10px; color:var(--ink-3); text-align:center; padding:0 12px; letter-spacing:.05em; text-transform:uppercase; }
+.tt-meta { position:absolute; bottom:0; left:0; right:0; padding:8px 12px; background:linear-gradient(transparent,rgba(0,0,0,.6)); }
+.tt-slot--ph .tt-meta { position:static; background:none; text-align:center; padding:8px 0 0; }
+.tt-views { font-size:10px; color:rgba(255,255,255,.85); font-weight:500; }
+.tt-slot--ph .tt-views { color:var(--ink-3); }
+.tt-cta { display:inline-block; background:var(--blue); color:#fff; font-size:11px; font-weight:600; padding:6px 18px; border-radius:4px; margin-top:10px; }
 
 /* Projection table */
 .proj { width:100%; border-collapse:collapse; font-size:12px; font-variant-numeric:tabular-nums; }
@@ -87,35 +97,23 @@ hr { border:none; border-top:1px solid var(--rule); }
 .g-ext { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
 .g-ext span { font-size:10.5px; color:var(--blue); border-bottom:1px solid rgba(0,49,255,.25); }
 
-/* Responsive ad builder */
-.rsa-box { border:1px solid var(--rule); border-radius:8px; padding:16px 18px; margin-bottom:16px; }
-.rsa-title { font-size:10px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); margin-bottom:10px; }
+/* RSA builder */
+.rsa-box { border:1px solid var(--rule); border-radius:8px; padding:14px 16px; margin-bottom:14px; }
+.rsa-title { font-size:10px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); margin-bottom:8px; }
 .rsa-list { list-style:none; }
-.rsa-list li { font-size:11.5px; padding:5px 0; border-bottom:1px solid var(--bg-alt); display:flex; align-items:baseline; gap:8px; }
+.rsa-list li { font-size:11px; padding:4px 0; border-bottom:1px solid var(--bg-alt); display:flex; align-items:baseline; gap:6px; }
 .rsa-list li:last-child { border-bottom:none; }
-.rsa-idx { font-size:9px; font-weight:600; color:var(--ink-3); background:var(--bg-alt); border-radius:3px; padding:1px 5px; flex-shrink:0; }
-.rsa-pin { font-size:8px; font-weight:600; color:var(--blue); background:rgba(0,49,255,.08); border-radius:2px; padding:1px 4px; margin-left:auto; flex-shrink:0; }
+.rsa-idx { font-size:8px; font-weight:600; color:var(--ink-3); background:var(--bg-alt); border-radius:3px; padding:1px 4px; flex-shrink:0; }
+.rsa-pin { font-size:7px; font-weight:600; color:var(--blue); background:rgba(0,49,255,.08); border-radius:2px; padding:1px 4px; margin-left:auto; flex-shrink:0; }
 
-/* Landing page advantages */
-.adv-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:12px 0 16px; }
-.adv { border:1px solid var(--rule); border-radius:6px; padding:12px 14px; }
-.adv h4 { font-size:12px; font-weight:600; margin-bottom:3px; }
-.adv p { font-size:11px; color:var(--ink-2); line-height:1.45; }
-
-/* LP screenshot */
-.lp-slots { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:14px 0; }
-.lp-slot { border:1px solid var(--rule); border-radius:8px; overflow:hidden; background:var(--bg-alt); }
-.lp-slot img { width:100%; height:auto; display:block; }
-.lp-slot-label { font-size:10px; color:var(--ink-3); letter-spacing:.08em; text-transform:uppercase; text-align:center; padding:8px 0; }
+/* Keywords pills */
+.kw { display:flex; flex-wrap:wrap; gap:5px; margin:8px 0 14px; }
+.kw span { font-size:10.5px; padding:3px 9px; border:1px solid var(--rule); border-radius:3px; color:var(--ink-2); }
 
 /* CTA block */
 .cta { background:var(--navy); color:white; padding:20px 24px; border-radius:6px; margin-top:20px; }
 .cta h3 { font-size:14px; font-weight:600; margin-bottom:6px; }
 .cta p { font-size:12px; opacity:.85; line-height:1.6; }
-
-/* Keywords pills */
-.kw { display:flex; flex-wrap:wrap; gap:5px; margin:8px 0 14px; }
-.kw span { font-size:10.5px; padding:3px 9px; border:1px solid var(--rule); border-radius:3px; color:var(--ink-2); }
 `;
 
 const HEADER = `
@@ -169,7 +167,7 @@ const html = `<title>Propuesta Publicidad Digital — Smart Armor</title>
   <p class="body mt-s">Smart Armor ofrece blindaje vehicular profesional con certificación NIJ Nivel II, cristales balísticos de 14mm y Kevlar de 9 capas. Esta propuesta combina <strong>TikTok Ads</strong> (generación de demanda y formularios) con <strong>Google Ads</strong> (captura de intención de búsqueda) para maximizar la captación de leads calificados en CDMX.</p>
   <p class="body">Ambas campañas correrán exclusivamente de <strong>lunes a viernes</strong>, enfocadas en las 5 alcaldías de mayor rendimiento para este sector.</p>
 
-  <div class="ft"><span>MAW Soluciones</span><span>Página 1 de 5</span></div>
+  <div class="ft"><span>MAW Soluciones</span><span>Página 1 de 4</span></div>
 </div>
 
 <!-- ============ PAGE 2: TIKTOK ADS ============ -->
@@ -187,20 +185,16 @@ const html = `<title>Propuesta Publicidad Digital — Smart Armor</title>
     <div class="seg-item"><strong>Horarios</strong>Lunes a viernes &middot; 7:00 AM – 10:00 PM</div>
   </div>
 
-  <div class="section">Palabras clave / intereses</div>
-  <div class="kw">
-    <span>Blindaje automotriz</span><span>Blindaje vehicular</span><span>Seguridad vehicular</span><span>Protección para autos</span><span>Camionetas blindadas</span><span>Autos de lujo</span><span>Seguridad personal</span><span>Empresarios CDMX</span><span>SUVs</span><span>Cristales blindados</span>
-  </div>
-
   <hr>
   <div class="section mt-s">Anuncios a correr</div>
-  <div class="ad-slots">
-    <div class="ad-slot"><div class="ad-slot-num">1</div><div class="ad-slot-label">Anuncio TikTok</div></div>
-    <div class="ad-slot"><div class="ad-slot-num">2</div><div class="ad-slot-label">Anuncio TikTok</div></div>
-    <div class="ad-slot"><div class="ad-slot-num">3</div><div class="ad-slot-label">Anuncio TikTok</div></div>
+  <div class="tt-grid">
+    ${ttSlot(tt1, 'Tu tranquilidad no tiene precio', '179')}
+    ${ttSlot(tt2, '36 meses sin intereses', '201')}
+    ${ttSlot(tt3, 'La prevención marca la diferencia', '620')}
   </div>
+  <p style="text-align:center;margin:6px 0 0;"><span class="tt-cta">¡Cotizar Ahora!</span></p>
 
-  <hr>
+  <hr class="mt-s">
   <div class="section mt-s">Proyecciones estimadas</div>
   <table class="proj">
     <thead><tr><th>Métrica</th><th class="hl">Estimado</th></tr></thead>
@@ -212,12 +206,12 @@ const html = `<title>Propuesta Publicidad Digital — Smart Armor</title>
       <tr><td class="lbl">Impresiones</td><td>35,000 – 50,000</td></tr>
     </tbody>
   </table>
-  <p class="note">*Proyecciones basadas en un CPL de $35 MXN. El alcance puede variar según la optimización de la plataforma hacia el objetivo de formularios.</p>
+  <p class="note">*Proyecciones basadas en un CPL de $35 MXN. El alcance puede variar según la optimización de la plataforma.</p>
 
-  <div class="ft"><span>MAW Soluciones &middot; Smart Armor</span><span>Página 2 de 5</span></div>
+  <div class="ft"><span>MAW Soluciones &middot; Smart Armor</span><span>Página 2 de 4</span></div>
 </div>
 
-<!-- ============ PAGE 3: GOOGLE ADS - SEGMENTATION + AD FORMAT ============ -->
+<!-- ============ PAGE 3: GOOGLE ADS — SEGMENTACIÓN + RSA ============ -->
 <div class="page">
   <div class="accent"></div>
   <div class="section">Campaña 2 — Google Ads &middot; $5,000 MXN</div>
@@ -239,7 +233,6 @@ const html = `<title>Propuesta Publicidad Digital — Smart Armor</title>
 
   <hr>
   <div class="section mt-s">Estructura del anuncio responsivo (RSA)</div>
-
   <div class="rsa-box">
     <div class="rsa-title">Títulos (headlines)</div>
     <ul class="rsa-list">
@@ -265,10 +258,10 @@ const html = `<title>Propuesta Publicidad Digital — Smart Armor</title>
     </ul>
   </div>
 
-  <div class="ft"><span>MAW Soluciones &middot; Smart Armor</span><span>Página 3 de 5</span></div>
+  <div class="ft"><span>MAW Soluciones &middot; Smart Armor</span><span>Página 3 de 4</span></div>
 </div>
 
-<!-- ============ PAGE 4: GOOGLE ADS - PREVIEW + PROJECTIONS ============ -->
+<!-- ============ PAGE 4: GOOGLE ADS — PREVIEWS + PROYECCIONES ============ -->
 <div class="page">
   <div class="accent"></div>
   <div class="section">Así se verán tus anuncios en Google</div>
@@ -287,14 +280,7 @@ const html = `<title>Propuesta Publicidad Digital — Smart Armor</title>
     <div class="g-d">Paquetes desde $196,100. Sedán, SUV y Pick Up. Instalación discreta sin modificar estética.</div>
     <div class="g-ext"><span>Nivel NIJ II</span><span>Leasing Disponible</span><span>Sin Modificar Estética</span><span>+52 55 2850 2758</span></div>
   </div>
-  <div class="g-ad">
-    <div class="g-spon">Patrocinado</div>
-    <div class="g-url">smartarmor.com.mx/cotiza</div>
-    <div class="g-h">Protege lo Que Más Importa — Kevlar 9 Capas de Protección</div>
-    <div class="g-d">Protección contra 9mm, .357 Magnum y .38 Special. Nivel NIJ II certificado. Agenda tu cita.</div>
-    <div class="g-ext"><span>Paquete Shield</span><span>Paquete Diamond</span><span>Paquete Full</span><span>Cotizar Ahora</span></div>
-  </div>
-  <p class="note">*Google combina automáticamente los títulos y descripciones para generar variaciones optimizadas. Los ejemplos muestran combinaciones representativas.</p>
+  <p class="note" style="margin-top:6px;">*Google combina automáticamente títulos y descripciones para generar variaciones optimizadas.</p>
 
   <hr class="mt-s">
   <div class="section mt-s">Extensiones de anuncio</div>
@@ -315,38 +301,10 @@ const html = `<title>Propuesta Publicidad Digital — Smart Armor</title>
       <tr><td class="lbl">Clics estimados</td><td>~200</td></tr>
       <tr><td class="lbl">Impresiones estimadas</td><td>4,000 – 5,000</td></tr>
       <tr><td class="lbl">CTR estimado</td><td>4% – 5%</td></tr>
-      <tr><td class="lbl">Tasa de conversión a lead</td><td>10% – 15%</td></tr>
       <tr><td class="lbl">Leads estimados</td><td>20 – 30</td></tr>
     </tbody>
   </table>
-  <p class="note">*Proyecciones basadas en un CPC de $25 MXN en campañas de búsqueda sin Display. Los leads se generan a través de la landing page / formulario de cotización.</p>
 
-  <div class="ft"><span>MAW Soluciones &middot; Smart Armor</span><span>Página 4 de 5</span></div>
-</div>
-
-<!-- ============ PAGE 5: LANDING PAGE + CTA ============ -->
-<div class="page">
-  <div class="accent"></div>
-  <div class="section">¿Por qué necesitas una landing page?</div>
-  <p class="body">Los anuncios de Google Ads rinden significativamente mejor cuando dirigen a una <strong>landing page optimizada</strong> en lugar de un sitio web genérico. Una landing page diseñada para conversión puede duplicar o triplicar la tasa de leads.</p>
-
-  <div class="adv-grid">
-    <div class="adv"><h4>Mayor tasa de conversión</h4><p>Diseñada con un solo objetivo: que el visitante solicite cotización. Sin distracciones ni menús de navegación innecesarios.</p></div>
-    <div class="adv"><h4>Velocidad de carga</h4><p>Una landing optimizada carga en menos de 2 segundos. Google penaliza sitios lentos subiendo el CPC y bajando la posición del anuncio.</p></div>
-    <div class="adv"><h4>Seguimiento preciso</h4><p>Permite rastrear exactamente qué anuncio, palabra clave y audiencia generó cada lead. Datos clave para optimizar la inversión.</p></div>
-    <div class="adv"><h4>Pruebas A/B</h4><p>Se pueden probar diferentes versiones (textos, imágenes, CTA) para encontrar la combinación que genera más cotizaciones.</p></div>
-    <div class="adv"><h4>Quality Score alto</h4><p>Google premia la relevancia: una landing page alineada al anuncio reduce el CPC y mejora la posición del anuncio.</p></div>
-    <div class="adv"><h4>Profesionalismo</h4><p>Una página profesional genera confianza inmediata. Para un servicio de alto ticket como blindaje, la primera impresión importa.</p></div>
-  </div>
-
-  <div class="section">Capturas del proyecto web</div>
-  <p class="body">Demo en línea: <a href="https://www.blindajesmartarmor.com" style="color:var(--blue);font-weight:600;">www.blindajesmartarmor.com</a></p>
-  <div class="lp-slots">
-    <div class="lp-slot"><img src="${capCotizador}" alt="Cotizador interactivo"><div class="lp-slot-label">Cotizador interactivo</div></div>
-    <div class="lp-slot"><img src="${capHeroDesktop}" alt="Hero desktop"><div class="lp-slot-label">Hero principal (Desktop)</div></div>
-  </div>
-
-  <hr>
   <div class="cta">
     <h3>Resumen de la inversión</h3>
     <p style="opacity:1;font-size:13px;font-weight:600;margin-bottom:8px;">
@@ -355,8 +313,16 @@ const html = `<title>Propuesta Publicidad Digital — Smart Armor</title>
     <p>Periodo: 15 de agosto – 15 de septiembre 2026. La inversión publicitaria se cobra directamente por cada plataforma. MAW Soluciones se encarga de la estrategia, configuración, segmentación, optimización y reportes de rendimiento.</p>
   </div>
 
-  <div class="ft"><span>MAW Soluciones &middot; contacto@mawsoluciones.com</span><span>Página 5 de 5</span></div>
+  <div class="ft"><span>MAW Soluciones &middot; contacto@mawsoluciones.com</span><span>Página 4 de 4</span></div>
 </div>`;
 
 fs.writeFileSync(path.join(base, 'propuesta-smart-armor.html'), html, 'utf8');
 console.log('propuesta-smart-armor.html written');
+if (!tt1 || !tt2 || !tt3) {
+  console.log('\n⚠️  Faltan imágenes de TikTok. Guarda las 3 capturas como:');
+  if (!tt1) console.log('   tiktok-1.png (o .jpg) — "Tu tranquilidad no tiene precio"');
+  if (!tt2) console.log('   tiktok-2.png (o .jpg) — "36 meses sin intereses"');
+  if (!tt3) console.log('   tiktok-3.png (o .jpg) — "La prevención marca la diferencia"');
+  console.log('   en: C:\\Users\\alexi\\Desktop\\smart-armor\\');
+  console.log('   Luego corre: node _build-propuesta.js');
+}
