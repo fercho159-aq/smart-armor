@@ -7,6 +7,8 @@ const logoW = b64('assets/images/logo-blanco.png', 'png');
 const tt1 = tryB64('tiktok/Screenshot_1.png', 'png');
 const tt2 = tryB64('tiktok/Screenshot_2.png', 'png');
 const tt3 = tryB64('tiktok/Screenshot_3.png', 'png');
+const capCotizador = b64('captura-cotizador.png', 'png');
+const capHeroDesktop = b64('captura-hero-desktop.png', 'png');
 
 const ttSlot = (img, label, views) => img
   ? `<div class="tt-slot"><img src="${img}" alt="${label}"><div class="tt-meta"><span class="tt-views">▶ ${views} reproducciones</span></div></div>`
@@ -111,9 +113,15 @@ hr { border:none; border-top:1px solid var(--rule); }
 .kw span { font-size:10.5px; padding:3px 9px; border:1px solid var(--rule); border-radius:3px; color:var(--ink-2); }
 
 /* CTA block */
-.cta { background:var(--navy); color:white; padding:20px 24px; border-radius:6px; margin-top:20px; }
+.cta { background:var(--navy); color:white; padding:20px 24px; border-radius:6px; margin-top:16px; }
 .cta h3 { font-size:14px; font-weight:600; margin-bottom:6px; }
 .cta p { font-size:12px; opacity:.85; line-height:1.6; }
+
+/* LP screenshots */
+.lp-slots { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:12px 0; }
+.lp-slot { border:1px solid var(--rule); border-radius:6px; overflow:hidden; background:var(--bg-alt); }
+.lp-slot img { width:100%; height:auto; display:block; }
+.lp-slot-label { font-size:9px; color:var(--ink-3); letter-spacing:.08em; text-transform:uppercase; text-align:center; padding:6px 0; }
 `;
 
 const HEADER = `
@@ -192,7 +200,6 @@ const html = `<title>Propuesta Publicidad Digital — Smart Armor</title>
     ${ttSlot(tt2, '36 meses sin intereses', '201')}
     ${ttSlot(tt3, 'La prevención marca la diferencia', '620')}
   </div>
-  <p style="text-align:center;margin:6px 0 0;"><span class="tt-cta">¡Cotizar Ahora!</span></p>
 
   <hr class="mt-s">
   <div class="section mt-s">Proyecciones estimadas</div>
@@ -211,61 +218,28 @@ const html = `<title>Propuesta Publicidad Digital — Smart Armor</title>
   <div class="ft"><span>MAW Soluciones &middot; Smart Armor</span><span>Página 2 de 4</span></div>
 </div>
 
-<!-- ============ PAGE 3: GOOGLE ADS — SEGMENTACIÓN + RSA ============ -->
+<!-- ============ PAGE 3: GOOGLE ADS — SEGMENTACIÓN + PREVIEWS ============ -->
 <div class="page">
   <div class="accent"></div>
   <div class="section">Campaña 2 — Google Ads &middot; $5,000 MXN</div>
   <div class="title" style="font-size:18px;margin-bottom:2px;">Búsqueda Responsiva</div>
-  <div class="subtitle">Objetivo: captar usuarios con intención de compra a través de anuncios de búsqueda en Google (sin Display)</div>
+  <div class="subtitle">Captar usuarios con intención de compra mediante anuncios de búsqueda en Google (sin Display)</div>
 
   <div class="section">Segmentación</div>
   <div class="seg">
-    <div class="seg-item"><strong>Ubicación (5 alcaldías)</strong>Miguel Hidalgo &middot; Benito Juárez &middot; Cuajimalpa de Morelos &middot; Álvaro Obregón &middot; Coyoacán</div>
-    <div class="seg-item"><strong>Edad</strong>25 – 55 años</div>
-    <div class="seg-item"><strong>Género</strong>Hombres y mujeres</div>
-    <div class="seg-item"><strong>Horarios</strong>Lunes a viernes &middot; 7:00 AM – 10:00 PM</div>
+    <div class="seg-item"><strong>Ubicación (5 alcaldías)</strong>Miguel Hidalgo &middot; Benito Juárez &middot; Cuajimalpa &middot; Álvaro Obregón &middot; Coyoacán</div>
+    <div class="seg-item"><strong>Edad / Género</strong>25 – 55 años &middot; Hombres y mujeres</div>
+    <div class="seg-item"><strong>Horarios</strong>Lunes a viernes &middot; 7 AM – 10 PM</div>
+    <div class="seg-item"><strong>Extensiones</strong>Sitelinks &middot; Callouts &middot; Llamada &middot; Ubicación</div>
   </div>
 
   <div class="section">Palabras clave</div>
   <div class="kw">
-    <span>blindaje automotriz CDMX</span><span>blindaje vehicular CDMX</span><span>blindar camioneta CDMX</span><span>cuánto cuesta blindar un auto</span><span>empresa de blindaje CDMX</span><span>blindaje nivel 2</span><span>cristales blindados</span><span>blindaje kevlar</span><span>cotización blindaje vehicular</span><span>blindaje discreto</span>
+    <span>blindaje automotriz CDMX</span><span>blindaje vehicular CDMX</span><span>blindar camioneta CDMX</span><span>cuánto cuesta blindar un auto</span><span>empresa de blindaje CDMX</span><span>cristales blindados</span><span>blindaje kevlar</span><span>cotización blindaje vehicular</span>
   </div>
 
   <hr>
-  <div class="section mt-s">Estructura del anuncio responsivo (RSA)</div>
-  <div class="rsa-box">
-    <div class="rsa-title">Títulos (headlines)</div>
-    <ul class="rsa-list">
-      <li><span class="rsa-idx">T1</span> Blindaje Automotriz en CDMX <span class="rsa-pin">PIN 1</span></li>
-      <li><span class="rsa-idx">T2</span> Smart Armor | Blindaje Profesional <span class="rsa-pin">PIN 1</span></li>
-      <li><span class="rsa-idx">T3</span> Desde $196,100 MXN</li>
-      <li><span class="rsa-idx">T4</span> Cristales Balísticos 14mm</li>
-      <li><span class="rsa-idx">T5</span> Nivel NIJ II Certificado</li>
-      <li><span class="rsa-idx">T6</span> Cotiza Sin Compromiso Hoy</li>
-      <li><span class="rsa-idx">T7</span> Kevlar 9 Capas de Protección</li>
-      <li><span class="rsa-idx">T8</span> Paquetes Shield, Diamond y Full</li>
-      <li><span class="rsa-idx">T9</span> Blindaje Discreto y Ligero</li>
-      <li><span class="rsa-idx">T10</span> Protege lo Que Más Importa</li>
-    </ul>
-  </div>
-  <div class="rsa-box">
-    <div class="rsa-title">Descripciones</div>
-    <ul class="rsa-list">
-      <li><span class="rsa-idx">D1</span> Blindaje vehicular profesional en CDMX. Cristales balísticos 14mm + Kevlar 9 capas. ¡Cotiza ahora! <span class="rsa-pin">PIN 1</span></li>
-      <li><span class="rsa-idx">D2</span> Paquetes desde $196,100. Sedán, SUV y Pick Up. Instalación discreta sin modificar estética.</li>
-      <li><span class="rsa-idx">D3</span> Protección contra 9mm, .357 Magnum y .38 Special. Nivel NIJ II certificado. Agenda tu cita.</li>
-      <li><span class="rsa-idx">D4</span> Opciones de leasing disponibles. Col. Anáhuac, Miguel Hidalgo, CDMX. Cotización confidencial.</li>
-    </ul>
-  </div>
-
-  <div class="ft"><span>MAW Soluciones &middot; Smart Armor</span><span>Página 3 de 4</span></div>
-</div>
-
-<!-- ============ PAGE 4: GOOGLE ADS — PREVIEWS + PROYECCIONES ============ -->
-<div class="page">
-  <div class="accent"></div>
-  <div class="section">Así se verán tus anuncios en Google</div>
-
+  <div class="section mt-s">Así se verán tus anuncios en Google</div>
   <div class="g-ad">
     <div class="g-spon">Patrocinado</div>
     <div class="g-url">smartarmor.com.mx</div>
@@ -280,30 +254,33 @@ const html = `<title>Propuesta Publicidad Digital — Smart Armor</title>
     <div class="g-d">Paquetes desde $196,100. Sedán, SUV y Pick Up. Instalación discreta sin modificar estética.</div>
     <div class="g-ext"><span>Nivel NIJ II</span><span>Leasing Disponible</span><span>Sin Modificar Estética</span><span>+52 55 2850 2758</span></div>
   </div>
-  <p class="note" style="margin-top:6px;">*Google combina automáticamente títulos y descripciones para generar variaciones optimizadas.</p>
+  <p class="note" style="margin-top:4px;">*Google combina automáticamente títulos y descripciones del RSA para generar variaciones optimizadas.</p>
 
-  <hr class="mt-s">
-  <div class="section mt-s">Extensiones de anuncio</div>
-  <div class="seg">
-    <div class="seg-item"><strong>Sitelinks</strong>Paquete Shield &middot; Paquete Diamond &middot; Paquete Full &middot; Cotizar Ahora</div>
-    <div class="seg-item"><strong>Callouts</strong>Leasing Disponible &middot; Sin Modificar Estética &middot; Nivel NIJ II &middot; Cotización Confidencial</div>
-    <div class="seg-item"><strong>Extensión de llamada</strong>+52 1 55 2850 2758</div>
-    <div class="seg-item"><strong>Extensión de ubicación</strong>Col. Anáhuac I Sección, Miguel Hidalgo, CDMX</div>
-  </div>
+  <div class="ft"><span>MAW Soluciones &middot; Smart Armor</span><span>Página 3 de 4</span></div>
+</div>
 
-  <hr>
-  <div class="section mt-s">Proyecciones estimadas — Google Ads</div>
+<!-- ============ PAGE 4: PROYECCIONES + CAPTURAS + CIERRE ============ -->
+<div class="page">
+  <div class="accent"></div>
+  <div class="section">Proyecciones estimadas — Google Ads</div>
   <table class="proj">
     <thead><tr><th>Métrica</th><th class="hl">Estimado</th></tr></thead>
     <tbody>
       <tr><td class="lbl">Inversión</td><td>$5,000 MXN</td></tr>
       <tr><td class="lbl">CPC promedio</td><td>~$25 MXN</td></tr>
       <tr><td class="lbl">Clics estimados</td><td>~200</td></tr>
-      <tr><td class="lbl">Impresiones estimadas</td><td>4,000 – 5,000</td></tr>
-      <tr><td class="lbl">CTR estimado</td><td>4% – 5%</td></tr>
+      <tr><td class="lbl">Impresiones</td><td>4,000 – 5,000</td></tr>
       <tr><td class="lbl">Leads estimados</td><td>20 – 30</td></tr>
     </tbody>
   </table>
+
+  <hr class="mt-s">
+  <div class="section mt-s">Landing page del proyecto</div>
+  <p class="body" style="margin-bottom:10px;">Demo en línea: <a href="https://www.blindajesmartarmor.com" style="color:var(--blue);font-weight:600;">www.blindajesmartarmor.com</a></p>
+  <div class="lp-slots">
+    <div class="lp-slot"><img src="${capCotizador}" alt="Cotizador interactivo"><div class="lp-slot-label">Cotizador interactivo</div></div>
+    <div class="lp-slot"><img src="${capHeroDesktop}" alt="Hero desktop"><div class="lp-slot-label">Hero principal</div></div>
+  </div>
 
   <div class="cta">
     <h3>Resumen de la inversión</h3>
