@@ -1938,3 +1938,7 @@ footer {
     display: inline;
 }
 
+option {
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+}
