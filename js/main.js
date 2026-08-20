@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================================================
-    // FORMULARIO DE CAPTACIÓN DE LEAD (GOOGLE ADS OPTIMIZADO)
+    // FORMULARIO DE CAPTACIÓN DE LEAD (GOOGLE ADS OPTIMIZADO) - REDIRECCIÓN A WHATSAPP
     // ==========================================================================
     const quoteForms = document.querySelectorAll('.quote-form');
 
@@ -118,35 +118,44 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            // Deshabilitar botón para evitar envíos múltiples
+            // Deshabilitar botón temporalmente
             const submitBtn = form.querySelector('button[type="submit"]');
             const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Enviar';
             
             if (submitBtn) {
                 submitBtn.disabled = true;
-                submitBtn.innerHTML = 'Procesando...';
+                submitBtn.innerHTML = 'Conectando a WhatsApp...';
             }
 
             // Obtener valores del formulario
-            const name = form.querySelector('[name="nombre"]').value;
-            const email = form.querySelector('[name="email"]').value;
-            const phone = form.querySelector('[name="telefono"]').value;
-            const vehicle = form.querySelector('[name="vehiculo"]').value;
+            const name = form.querySelector('[name="nombre"]') ? form.querySelector('[name="nombre"]').value : '';
+            const email = form.querySelector('[name="email"]') ? form.querySelector('[name="email"]').value : '';
+            const phone = form.querySelector('[name="telefono"]') ? form.querySelector('[name="telefono"]').value : '';
+            const vehicle = form.querySelector('[name="vehiculo"]') ? form.querySelector('[name="vehiculo"]').value : '';
+            const packageInterest = form.querySelector('[name="paquete"]') ? form.querySelector('[name="paquete"]').value : '';
             const message = form.querySelector('[name="mensaje"]') ? form.querySelector('[name="mensaje"]').value : '';
 
-            // Simular petición AJAX de envío
+            // Construir mensaje para WhatsApp
+            let text = `Hola Smart Armor, solicito una cotización confidencial.\n\n`;
+            if(name) text += `*Nombre:* ${name}\n`;
+            if(vehicle) text += `*Vehículo:* ${vehicle}\n`;
+            if(packageInterest) text += `*Paquete:* ${packageInterest}\n`;
+            if(email) text += `*Correo:* ${email}\n`;
+            if(message) text += `*Mensaje:* ${message}\n`;
+            
+            const waUrl = `https://wa.me/525528502758?text=${encodeURIComponent(text)}`;
+
+            // Restaurar formulario y redirigir
             setTimeout(() => {
                 if (submitBtn) {
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = originalBtnText;
                 }
-
-                // Mostrar mensaje de éxito premium
-                alert(`¡Gracias ${name}! Tu solicitud de cotización para blindaje de ${vehicle} ha sido recibida con éxito. Un especialista de Smart Armor se comunicará contigo confidencialmente por teléfono (${phone}) o correo electrónico en menos de 20 minutos.`);
                 
-                // Limpiar formulario
+                // FormSubmit trigger event para GTM ya pasó porque usamos listener
+                window.open(waUrl, '_blank');
                 form.reset();
-            }, 1500);
+            }, 800);
         });
     });
 
